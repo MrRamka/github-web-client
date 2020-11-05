@@ -15,18 +15,11 @@ import {
 	WelcomeText,
 	Wrapper
 } from './styles';
-import { useHistory } from 'react-router';
 import { Routes as R } from '../../constants';
 
 export const Login: FC = () => {
 
 	const url = `https://github.com/login/oauth/authorize?client_id=${CLIENT_ID}&scope=user&redirect_uri=${REDIRECT_URI}`;
-	const history = useHistory();
-
-
-	const onClick = () => {
-		history.push(url);
-	}
 
 	return (
 		<PageWrapper>
@@ -48,8 +41,8 @@ export const Login: FC = () => {
 							</WelcomeText>
 						</div>
 						<ButtonWrapper>
-							<BlueButtonOutline onClick={onClick}>
-								Login with GitHub
+							<BlueButtonOutline>
+								<a href={url}>Login with GitHub</a>
 							</BlueButtonOutline>
 						</ButtonWrapper>
 					</InnerDiv>

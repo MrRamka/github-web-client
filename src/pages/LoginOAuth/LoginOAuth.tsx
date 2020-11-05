@@ -2,6 +2,7 @@ import React, { FC, useEffect } from 'react';
 import { useHistory } from 'react-router';
 import { AUTH_API_URI } from '../../constants';
 import { Routes as R } from '../../constants';
+import { GithubOAuthLoginLogo, PageWrapper } from './styles';
 
 export const LoginOAuth: FC = () => {
 
@@ -15,12 +16,17 @@ export const LoginOAuth: FC = () => {
 				.then(response => response.json())
 				.then(({token}) => {
 					localStorage.setItem('github_token', token);
-					history.push(R.ROOT);
+					//mb fix timeout
+					setTimeout(() => {
+						history.push(R.ROOT);
+					}, 1000)
 				});
 		}
 	}, [history])
 
 	return (
-		<></>
+		<PageWrapper>
+			<GithubOAuthLoginLogo/>
+		</PageWrapper>
 	)
 };

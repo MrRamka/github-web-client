@@ -7,7 +7,6 @@ import { PoppinsText } from '../../shared/PoppinsText';
 export const PageWrapper = styled.div`
 	background-color: ${Colors.gray_3};
 	height: 100vh;
-
 `;
 
 export const Wrapper = styled.div`
