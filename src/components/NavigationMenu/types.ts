@@ -4,5 +4,6 @@ export enum MenuType {
 	PROFILE = 'Profile',
 	ISSUES = 'Issues',
 	PULL_REQUESTS = 'Pull requests',
-	SETTINGS = 'Settings'
+	EXPLORE = 'Explore',
+	REPOSITORIES = 'Repositories',
 }

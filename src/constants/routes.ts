@@ -6,5 +6,6 @@ export enum Routes {
 	PROFILE = '/profile',
 	ISSUES = '/issues',
 	PULL_REQUESTS = '/pull_requests',
-	SETTING = '/settings',
+	EXPLORE = '/explore',
+	REPOSITORIES = '/repositories',
 }

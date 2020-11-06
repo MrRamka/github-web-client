@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Menu, Typography } from 'antd';
 
 export const MenuItem = styled(Menu.Item)`
-	font-size: 1.1rem;
+	font-size: 0.9rem;
 `;
 
 export const Title = styled(Typography.Title)`

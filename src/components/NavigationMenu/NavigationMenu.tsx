@@ -1,8 +1,8 @@
 import React, { FC, useCallback, useMemo } from 'react';
 import { Layout, Menu } from 'antd';
-import { UnorderedListOutlined, UserOutlined } from '@ant-design/icons';
+import { UserOutlined } from '@ant-design/icons';
 import 'antd/dist/antd.css';
-import { BranchesOutlined, SettingOutlined } from '@ant-design/icons/lib';
+import { BranchesOutlined, DatabaseOutlined, QuestionCircleOutlined, SearchOutlined } from '@ant-design/icons/lib';
 import { MENU_NAVIGATION_WIDTH, MenuType } from './types';
 import { Routes as R } from '../../constants';
 import { useHistory } from 'react-router';
@@ -39,8 +39,11 @@ export const NavigationMenu: FC = () => {
 		if (type === MenuType.PULL_REQUESTS) {
 			pathName = R.PULL_REQUESTS;
 		}
-		if (type === MenuType.SETTINGS) {
-			pathName = R.SETTING;
+		if (type === MenuType.EXPLORE) {
+			pathName = R.EXPLORE;
+		}
+		if (type === MenuType.REPOSITORIES) {
+			pathName = R.REPOSITORIES;
 		}
 		history.push(pathName);
 	}, [history])
@@ -56,7 +59,7 @@ export const NavigationMenu: FC = () => {
 			{
 				name: 'Issues',
 				key: MenuType.ISSUES,
-				icon: <UnorderedListOutlined style={iconStyle}/>,
+				icon: <QuestionCircleOutlined style={iconStyle}/>,
 				onClick: () => handleClick(MenuType.ISSUES),
 			},
 			{
@@ -66,10 +69,16 @@ export const NavigationMenu: FC = () => {
 				onClick: () => handleClick(MenuType.PULL_REQUESTS),
 			},
 			{
-				name: 'Settings',
-				key: MenuType.SETTINGS,
-				icon: <SettingOutlined style={iconStyle}/>,
-				onClick: () => handleClick(MenuType.SETTINGS),
+				name: 'Explore',
+				key: MenuType.EXPLORE,
+				icon: <SearchOutlined style={iconStyle}/>,
+				onClick: () => handleClick(MenuType.EXPLORE),
+			},
+			{
+				name: 'Repositories',
+				key: MenuType.REPOSITORIES,
+				icon: <DatabaseOutlined style={iconStyle}/>,
+				onClick: () => handleClick(MenuType.REPOSITORIES),
 			}
 		], [handleClick])
 
