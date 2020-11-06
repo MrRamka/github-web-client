@@ -3,8 +3,8 @@ import { GithubOutlined } from '@ant-design/icons/lib';
 import { Title } from '../NavigationMenu/styles';
 import { Colors } from '../../shared';
 
-const iconStyle = {fontSize: '2.5rem', margin: '0.5rem', color: Colors.dark_blue,};
-const titleStyle = {color: Colors.dark_blue,};
+const iconStyle = {fontSize: '2.5rem', margin: '0.5rem', color: Colors.blue_12};
+const titleStyle = {color: Colors.blue_12};
 
 export const AppTitle: FC = () => {
 	return (
