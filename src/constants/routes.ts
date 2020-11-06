@@ -7,4 +7,5 @@ export enum Routes {
 	ISSUES = '/issues',
 	PULL_REQUESTS = '/pull_requests',
 	SETTING = '/settings',
+	REPO = 'https://github.com/MrRamka/github-web-client'
 }
