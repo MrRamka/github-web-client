@@ -8,6 +8,7 @@ import { Profile } from './pages/Profile';
 import { PrivateRoute } from './components/PrivateRouter';
 import { ApolloProvider } from '@apollo/client';
 import { client } from './api';
+import { Logout } from './pages/Logout';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
 					<Route exact path={R.LOGIN} component={Login}/>
 					<Route exact path={R.OATH_LOGIN} component={LoginOAuth}/>
 					<PrivateRoute exact path={[R.ROOT, R.PROFILE]} component={Profile}/>
+					<PrivateRoute exact path={R.LOGOUT} component={Logout}/>
 					{
 						//TODO add all routes
 					}

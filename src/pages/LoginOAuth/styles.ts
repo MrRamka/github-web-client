@@ -14,8 +14,7 @@ const pulse = keyframes`
 	100% {
 		transform: scale(0.95);
 	}
-`
-
+`;
 
 export const PageWrapper = styled.div`
 	background-color: ${Colors.gray_3};
@@ -28,5 +27,11 @@ export const PageWrapper = styled.div`
 export const GithubOAuthLoginLogo = styled(GithubOutlined)`
 	font-size: 30rem;
 	color: ${Colors.blue_6};
-		animation: ${pulse} 2s ease infinite;
+	animation: ${pulse} 2s ease infinite;
+`;
+
+export const GithubLogoutLogo = styled(GithubOutlined)`
+	font-size: 30rem;
+	color: ${Colors.red_5};
+	animation: ${pulse} 2s ease infinite;
 `;

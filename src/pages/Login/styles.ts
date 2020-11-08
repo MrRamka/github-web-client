@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Button } from 'antd';
 import { Colors } from '../../shared';
 import { GithubOutlined } from '@ant-design/icons/lib';
 import { PoppinsText } from '../../shared/PoppinsText';
@@ -28,15 +27,15 @@ export const TextWrapper = styled.div`
 	width: 50%;
 	height: 25rem;
 `;
-export const BlueButtonOutline = styled(Button)`
+export const BlueLinkOutline = styled.a`
+	border: 2px solid;
 	color: ${Colors.blue_6};
 	background-color: ${Colors.gray_3};
 	border-color: ${Colors.blue_6};
 	border-radius: 10px;
 	font-size: 1.7rem;
-	height: 4rem;
 	font-family: 'Poppins', serif;
-	padding: 0 3rem;
+	padding: 0.7rem 3rem;
 `;
 
 export const WelcomeText = styled(PoppinsText)`

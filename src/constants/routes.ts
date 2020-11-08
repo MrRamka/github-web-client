@@ -8,5 +8,6 @@ export enum Routes {
 	PULL_REQUESTS = '/pull_requests',
 	EXPLORE = '/explore',
 	REPOSITORIES = '/repositories',
-	REPO = 'https://github.com/MrRamka/github-web-client'
+	REPO = 'https://github.com/MrRamka/github-web-client',
+	LOGOUT = '/logout'
 }
