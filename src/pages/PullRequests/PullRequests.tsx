@@ -1,17 +1,17 @@
 import React, { FC } from 'react';
-import { Layout } from 'antd';
-import { NavigationMenu } from '../../components/NavigationMenu';
 import { Content, PageWrapper } from '../../shared';
-import { LayoutWrapper } from "../../shared/LayoutWrapper";
+import { LayoutWrapper } from '../../shared';
+import { NavigationMenu } from '../../components/NavigationMenu';
+import { Layout } from 'antd';
 
-export const Profile: FC = () => {
+export const PullRequests: FC = () => {
 	return (
 		<PageWrapper>
 			<LayoutWrapper>
 				<NavigationMenu/>
 				<Layout>
 					<Content>
-						Profile
+						Explore
 					</Content>
 				</Layout>
 			</LayoutWrapper>

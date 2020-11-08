@@ -4,11 +4,6 @@ import { Colors } from '../../shared';
 import { GithubOutlined } from '@ant-design/icons/lib';
 import { PoppinsText } from '../../shared/PoppinsText';
 
-export const PageWrapper = styled.div`
-	background-color: ${Colors.gray_3};
-	height: 100vh;
-`;
-
 export const Wrapper = styled.div`
 	height: 90vh;
 	display: flex;
