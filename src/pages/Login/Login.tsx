@@ -7,7 +7,6 @@ import {
 	GithubViewLogo,
 	InnerDiv,
 	LogoWrapper,
-	PageWrapper,
 	TextWrapper,
 	ViewCode,
 	ViewCodeBlock,
@@ -16,6 +15,7 @@ import {
 	Wrapper
 } from './styles';
 import { Routes as R } from '../../constants';
+import { PageWrapper } from '../../shared';
 
 export const Login: FC = () => {
 
