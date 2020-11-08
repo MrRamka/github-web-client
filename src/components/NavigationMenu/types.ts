@@ -6,4 +6,5 @@ export enum MenuType {
 	PULL_REQUESTS = 'Pull requests',
 	EXPLORE = 'Explore',
 	REPOSITORIES = 'Repositories',
+	LOGOUT = 'Logout',
 }

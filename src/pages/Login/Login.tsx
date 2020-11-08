@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { CLIENT_ID, REDIRECT_URI } from '../../constants/oath';
 import {
-	BlueButtonOutline,
+	BlueLinkOutline,
 	ButtonWrapper,
 	GithubLoginLogo,
 	GithubViewLogo,
@@ -41,9 +41,9 @@ export const Login: FC = () => {
 							</WelcomeText>
 						</div>
 						<ButtonWrapper>
-							<BlueButtonOutline>
-								<a href={url}>Login with GitHub</a>
-							</BlueButtonOutline>
+							<BlueLinkOutline href={url}>
+								Login with GitHub
+							</BlueLinkOutline>
 						</ButtonWrapper>
 					</InnerDiv>
 				</TextWrapper>

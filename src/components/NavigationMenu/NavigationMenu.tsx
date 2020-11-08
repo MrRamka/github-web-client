@@ -2,7 +2,13 @@ import React, { FC, useCallback, useMemo } from 'react';
 import { Layout, Menu } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import 'antd/dist/antd.css';
-import { BranchesOutlined, DatabaseOutlined, QuestionCircleOutlined, SearchOutlined } from '@ant-design/icons/lib';
+import {
+	BranchesOutlined,
+	DatabaseOutlined,
+	LogoutOutlined,
+	QuestionCircleOutlined,
+	SearchOutlined
+} from '@ant-design/icons/lib';
 import { MENU_NAVIGATION_WIDTH, MenuType } from './types';
 import { Routes as R } from '../../constants';
 import { useHistory } from 'react-router';
@@ -10,15 +16,16 @@ import { AvatarBlock, MenuItem, TitleBlock } from './styles';
 import { UserInfo } from '../UserInfo';
 import { PoppinsSpan } from '../../shared/PoppinsText';
 import { AppTitle } from '../AppTitle';
+import { Colors } from '../../shared';
 
-const {Sider} = Layout;
+const { Sider } = Layout;
 
 const iconStyle = {
 	fontSize: '1.3rem'
 }
 
 type navType = {
-	name: string,
+	name: React.ReactElement,
 	key: MenuType,
 	icon: React.ReactNode,
 	onClick: () => void;
@@ -45,41 +52,50 @@ export const NavigationMenu: FC = () => {
 		if (type === MenuType.REPOSITORIES) {
 			pathName = R.REPOSITORIES;
 		}
+		if (type === MenuType.LOGOUT) {
+			pathName = R.LOGOUT
+		}
 		history.push(pathName);
 	}, [history])
 
 	const navItems: navType[] = useMemo(() =>
 		[
 			{
-				name: 'Profile',
+				name: <PoppinsSpan>Profile</PoppinsSpan>,
 				key: MenuType.PROFILE,
 				icon: <UserOutlined style={iconStyle}/>,
 				onClick: () => handleClick(MenuType.PROFILE),
 			},
 			{
-				name: 'Issues',
+				name: <PoppinsSpan>Issues</PoppinsSpan>,
 				key: MenuType.ISSUES,
 				icon: <QuestionCircleOutlined style={iconStyle}/>,
 				onClick: () => handleClick(MenuType.ISSUES),
 			},
 			{
-				name: 'Pull requests',
+				name: <PoppinsSpan>Pull Requests</PoppinsSpan>,
 				key: MenuType.PULL_REQUESTS,
 				icon: <BranchesOutlined style={iconStyle}/>,
 				onClick: () => handleClick(MenuType.PULL_REQUESTS),
 			},
 			{
-				name: 'Explore',
+				name: <PoppinsSpan>Explore</PoppinsSpan>,
 				key: MenuType.EXPLORE,
 				icon: <SearchOutlined style={iconStyle}/>,
 				onClick: () => handleClick(MenuType.EXPLORE),
 			},
 			{
-				name: 'Repositories',
+				name:  <PoppinsSpan>Repositories</PoppinsSpan>,
 				key: MenuType.REPOSITORIES,
 				icon: <DatabaseOutlined style={iconStyle}/>,
 				onClick: () => handleClick(MenuType.REPOSITORIES),
-			}
+			},
+			{
+				name: <PoppinsSpan style={{color: Colors.red_5}}>Logout</PoppinsSpan>,
+				key: MenuType.LOGOUT,
+				icon: <LogoutOutlined style={{...iconStyle, color:Colors.red_5}}/>,
+				onClick: () => handleClick(MenuType.LOGOUT),
+			},
 		], [handleClick])
 
 
@@ -92,7 +108,6 @@ export const NavigationMenu: FC = () => {
 			<AvatarBlock>
 				<UserInfo/>
 			</AvatarBlock>
-
 			<Menu
 				mode="inline"
 				defaultSelectedKeys={[MenuType.PROFILE]}
@@ -101,11 +116,10 @@ export const NavigationMenu: FC = () => {
 				{
 					navItems.map(value =>
 						<MenuItem key={value.key} icon={value.icon} onClick={value.onClick}>
-							<PoppinsSpan>{value.name}</PoppinsSpan>
+							{value.name}
 						</MenuItem>
 					)
 				}
-
 			</Menu>
 		</Sider>
 
