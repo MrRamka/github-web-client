@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Content, PageWrapper } from '../../shared';
-import { LayoutWrapper } from '../../shared/LayoutWrapper';
+import { LayoutWrapper } from '../../shared';
 import { NavigationMenu } from '../../components/NavigationMenu';
 import { Layout } from 'antd';
 
@@ -11,7 +11,7 @@ export const Issues: FC = () => {
 				<NavigationMenu/>
 				<Layout>
 					<Content>
-						Explore
+						Issues
 					</Content>
 				</Layout>
 			</LayoutWrapper>

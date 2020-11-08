@@ -11,7 +11,7 @@ export const Repositories: FC = () => {
 				<NavigationMenu/>
 				<Layout>
 					<Content>
-						Explore
+						Repositories
 					</Content>
 				</Layout>
 			</LayoutWrapper>

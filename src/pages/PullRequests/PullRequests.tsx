@@ -11,7 +11,7 @@ export const PullRequests: FC = () => {
 				<NavigationMenu/>
 				<Layout>
 					<Content>
-						Explore
+						Pull Requests
 					</Content>
 				</Layout>
 			</LayoutWrapper>
