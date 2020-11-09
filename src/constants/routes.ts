@@ -8,8 +8,8 @@ export enum Routes {
 	PULL_REQUESTS = '/pull_requests',
 	EXPLORE = '/explore',
 	REPOSITORIES = '/repositories',
-	REPOSITORY = '/repository/^(?![-]).[A-Za-z0-9-]((?!-|-).)(?<![-]){1,39}$/^(?![_-]).[A-Za-z0-9_-]((?!_-|-_).)(?<![-_]){3,9}$',
+	REPOSITORY = '/repository/:username/:repository',
 	// Check this: https://stackoverflow.com/questions/30012770/regex-for-username
-	USER = ' /users/^(?![-]).[A-Za-z0-9-]((?!-|-).)(?<![-]){1,39}$',
+	USER = ' /users/:username',
 	LOGOUT = '/logout'
 }
