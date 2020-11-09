@@ -8,6 +8,8 @@ export enum Routes {
 	PULL_REQUESTS = '/pull_requests',
 	EXPLORE = '/explore',
 	REPOSITORIES = '/repositories',
-	REPO = 'https://github.com/MrRamka/github-web-client',
+	REPOSITORY = '/repository/:username/:repository',
+	// Check this: https://stackoverflow.com/questions/30012770/regex-for-username
+	USER = ' /users/:username',
 	LOGOUT = '/logout'
 }

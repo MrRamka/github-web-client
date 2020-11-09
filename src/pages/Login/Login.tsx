@@ -14,7 +14,7 @@ import {
 	WelcomeText,
 	Wrapper
 } from './styles';
-import { Routes as R } from '../../constants';
+import { Routes as R, Links as L } from '../../constants';
 import { PageWrapper } from '../../shared';
 
 export const Login: FC = () => {
@@ -52,7 +52,7 @@ export const Login: FC = () => {
 				<ViewCode>
 					<GithubViewLogo/>
 					&nbsp;&nbsp;
-					<ViewCodeLink href={R.REPO} target="_blank">View code</ViewCodeLink>
+					<ViewCodeLink href={L.REPO} target="_blank">View code</ViewCodeLink>
 				</ViewCode>
 			</ViewCodeBlock>
 
