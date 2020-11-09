@@ -18,25 +18,25 @@ import { Repository } from './pages/Repository';
 
 function App() {
 
-	return (
-		<ApolloProvider client={client}>
-			<Router>
-				<Switch>
-					<Route exact path={R.LOGIN} component={Login}/>
-					<Route exact path={R.OATH_LOGIN} component={LoginOAuth}/>
-					<PrivateRoute exact path={[R.ROOT, R.PROFILE]} component={Profile}/>
-					<PrivateRoute exact path={R.LOGOUT} component={Logout}/>
-					<PrivateRoute exact path={R.ISSUES} component={Issues}/>
-					<PrivateRoute exact path={R.PULL_REQUESTS} component={PullRequests}/>
-					<PrivateRoute exact path={R.EXPLORE} component={Explore}/>
-					<PrivateRoute exact path={R.REPOSITORIES} component={Repositories}/>
-					<PrivateRoute exact path={R.REPOSITORY} component={Repository}/>
-					<PrivateRoute exact path={R.USER} component={Profile}/>
-					<Redirect to={R.ROOT}/>
-				</Switch>
-			</Router>
-		</ApolloProvider>
-	);
+    return (
+        <ApolloProvider client={client}>
+            <Router>
+                <Switch>
+                    <Route exact path={R.LOGIN} component={Login}/>
+                    <Route exact path={R.OATH_LOGIN} component={LoginOAuth}/>
+                    <PrivateRoute exact path={[R.ROOT, R.PROFILE]} component={Profile}/>
+                    <PrivateRoute exact path={R.LOGOUT} component={Logout}/>
+                    <PrivateRoute exact path={R.ISSUES} component={Issues}/>
+                    <PrivateRoute exact path={R.PULL_REQUESTS} component={PullRequests}/>
+                    <PrivateRoute exact path={R.EXPLORE} component={Explore}/>
+                    <PrivateRoute exact path={R.REPOSITORIES} component={Repositories}/>
+                    <PrivateRoute exact path={R.REPOSITORY} component={Repository}/>
+                    <PrivateRoute exact path={R.USER} component={Profile}/>
+                    <Redirect to={R.ROOT}/>
+                </Switch>
+            </Router>
+        </ApolloProvider>
+    );
 }
 
 export default App;

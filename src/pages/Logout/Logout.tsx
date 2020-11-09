@@ -4,18 +4,18 @@ import { useHistory } from 'react-router';
 import { Routes as R } from '../../constants';
 
 export const Logout: FC = () => {
-	const history = useHistory();
+    const history = useHistory();
 
-	useEffect(() => {
-		localStorage.removeItem('github_token');
-		setTimeout(() => {
-			history.push(R.LOGIN);
-		}, 2000)
-	}, [history]);
+    useEffect(() => {
+        localStorage.removeItem('github_token');
+        setTimeout(() => {
+            history.push(R.LOGIN);
+        }, 2000)
+    }, [history]);
 
-	return (
-		<PageWrapper>
-			<GithubLogoutLogo/>
-		</PageWrapper>
-	);
+    return (
+        <PageWrapper>
+            <GithubLogoutLogo/>
+        </PageWrapper>
+    );
 }
