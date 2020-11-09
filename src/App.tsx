@@ -9,11 +9,11 @@ import { PrivateRoute } from './components/PrivateRouter';
 import { ApolloProvider } from '@apollo/client';
 import { client } from './api';
 import { Logout } from './pages/Logout';
-import {Issues} from "./pages/Issues";
-import {PullRequests} from "./pages/PullRequests";
-import {Explore} from "./pages/Explore";
-import {Repositories} from "./pages/Repositories";
-import {Repository} from "./pages/Repository";
+import { Issues } from './pages/Issues';
+import { PullRequests } from './pages/PullRequests';
+import { Explore } from './pages/Explore';
+import { Repositories } from './pages/Repositories';
+import { Repository } from './pages/Repository';
 
 
 function App() {
