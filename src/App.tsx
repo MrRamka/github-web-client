@@ -9,6 +9,11 @@ import { PrivateRoute } from './components/PrivateRouter';
 import { ApolloProvider } from '@apollo/client';
 import { client } from './api';
 import { Logout } from './pages/Logout';
+import {Issues} from "./pages/Issues";
+import {PullRequests} from "./pages/PullRequests";
+import {Explore} from "./pages/Explore";
+import {Repositories} from "./pages/Repositories";
+import {Repository} from "./pages/Repository";
 
 
 function App() {
@@ -21,9 +26,12 @@ function App() {
 					<Route exact path={R.OATH_LOGIN} component={LoginOAuth}/>
 					<PrivateRoute exact path={[R.ROOT, R.PROFILE]} component={Profile}/>
 					<PrivateRoute exact path={R.LOGOUT} component={Logout}/>
-					{
-						//TODO add all routes
-					}
+					<PrivateRoute exact path={R.ISSUES} component={Issues}/>
+					<PrivateRoute exact path={R.PULL_REQUESTS} component={PullRequests}/>
+					<PrivateRoute exact path={R.EXPLORE} component={Explore}/>
+					<PrivateRoute exact path={R.REPOSITORIES} component={Repositories}/>
+					<PrivateRoute exact path={R.REPOSITORY} component={Repository}/>
+					<PrivateRoute exact path={R.USER} component={Profile}/>
 					<Redirect to={R.ROOT}/>
 				</Switch>
 			</Router>
