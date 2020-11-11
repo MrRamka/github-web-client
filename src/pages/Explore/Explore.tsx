@@ -13,7 +13,6 @@ export const Explore: FC = () => {
                 <Layout>
                     <Content>
                         <ExploreList />
-                        Explore
                     </Content>
                 </Layout>
             </LayoutWrapper>

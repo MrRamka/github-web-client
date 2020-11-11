@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useMemo, useState } from 'react';
+import React, { FC, useCallback, useMemo } from 'react';
 import { Input, Select } from 'antd';
 import { useHistory } from 'react-router';
 import { Routes as R } from '../../constants';
@@ -18,7 +18,7 @@ export const GlobalSearch: FC<GlobalSearchProps> = ({setSearchValue, setSearchTy
 
     const onChangeSearchType = useCallback((value: SearchTypes) => {
         setSearchType(value);
-    }, [])
+    }, [setSearchType])
 
     const selectSearchItem = useMemo(() => (
         <Select defaultValue={SearchTypes.REPOSITORY} className="select-before" style={{width: 150}}
@@ -26,19 +26,19 @@ export const GlobalSearch: FC<GlobalSearchProps> = ({setSearchValue, setSearchTy
             <Option value={SearchTypes.REPOSITORY}>{SearchTypes.REPOSITORY}</Option>
             <Option value={SearchTypes.USER}>{SearchTypes.USER}</Option>
         </Select>
-    ), []);
+    ), [onChangeSearchType]);
 
     const onSearch = useCallback((value) => {
         setSearchValue(value);
         history.push(R.EXPLORE);
-    }, [history]);
+    }, [history, setSearchValue]);
 
     const onClick = useCallback(() => {
         //history.push(R.EXPLORE);
-    }, [history]);
+    }, []);
 
     return (
-        <Search addonBefore={selectSearchItem} placeholder="Global search" size="large" onSearch={onSearch}
+        <Search style={{width: '50%'}} addonBefore={selectSearchItem} placeholder="Global search" size="large" onSearch={onSearch}
                 onClick={onClick} allowClear/>
     );
 }

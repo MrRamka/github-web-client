@@ -8,7 +8,8 @@ query ($count: Int!, $type: SearchType!, $query: String!) {
         nameWithOwner
         url
         description
-        updatedAt
+        pushedAt
+        stargazerCount
         languages(first: 10, orderBy: {direction: DESC, field: SIZE}) {
           nodes {
             name
