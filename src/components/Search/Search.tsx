@@ -38,7 +38,7 @@ export const GlobalSearch: FC<GlobalSearchProps> = ({setSearchValue, setSearchTy
     }, []);
 
     return (
-        <Search style={{width: '50%'}} addonBefore={selectSearchItem} placeholder="Global search" size="large" onSearch={onSearch}
+        <Search autoFocus style={{width: '50%'}} addonBefore={selectSearchItem} placeholder="Global search" size="large" onSearch={onSearch}
                 onClick={onClick} allowClear/>
     );
 }

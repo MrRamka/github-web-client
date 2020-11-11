@@ -44,6 +44,7 @@ export const ResultList: FC<ResultListProps> = ({value, searchType}) => {
             itemLayout="horizontal"
             dataSource={repositoryResult.search.nodes}
             renderItem={renderRepositoryCard}
+            pagination={{pageSize: 4}}
         />
     );
 }
