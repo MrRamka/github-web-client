@@ -19,3 +19,33 @@ export interface RepositoryNode {
     },
     totalCount: number,
 }
+
+export interface UserSearchInfo {
+    search: {
+        nodes: UserNode[],
+    }
+}
+
+export interface UserNode {
+    login: string,
+    url: string,
+    name: string,
+    email: string,
+    avatarUrl: string,
+    bio: string,
+    followers: {
+        totalCount: number,
+    },
+    following: {
+        totalCount: number,
+    },
+    repositories: {
+        totalCount: number,
+    }
+    __typename: TypeName;
+}
+
+export enum TypeName {
+    USER = 'User',
+    ORGANISATION = 'Organization',
+}

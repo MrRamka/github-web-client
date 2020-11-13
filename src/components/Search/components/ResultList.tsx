@@ -1,50 +1,29 @@
-import React, { FC, useEffect, useState } from 'react';
-import { useQuery } from '@apollo/client';
-import { get_repositories, RepositorySearchInfo } from '../../../api/search';
-import { List } from 'antd';
-import { renderRepositoryCard } from '../../RepositoryCard/renders';
+import React, { FC } from 'react';
+import { SearchTypes } from '../types';
+import { SearchVariables } from './types';
+import { RepositorySearchPage } from '../../RepositorySearchPage';
+import { UserSearchPage } from '../../UserSearchPage';
 
 
 interface ResultListProps {
     value: string;
-    searchType: string;
-}
-
-const emptyResult: RepositorySearchInfo = {
-    search: {
-        nodes: []
-    },
+    searchType: SearchTypes;
 }
 
 export const ResultList: FC<ResultListProps> = ({value, searchType}) => {
 
-    const [repositoryResult, setRepositoryResult] = useState<RepositorySearchInfo>(emptyResult)
+     const isRepositorySearch = searchType === SearchTypes.REPOSITORY;
 
     //todo: add debounce
-    const searchVariables = {
-        count: 5,
+    const searchVariables: SearchVariables = {
+        count: 20,
         type: searchType,
         query: value
     }
 
-    const {loading, data} = useQuery<RepositorySearchInfo>(get_repositories, {
-        variables: {...searchVariables}
-    })
-
-    useEffect(() => {
-        if (!loading) {
-            setRepositoryResult(data ?? emptyResult);
-        }
-    }, [loading, data])
-
     return (
-        <List
-            style={{width: '50%'}}
-            loading={loading}
-            itemLayout="horizontal"
-            dataSource={repositoryResult.search.nodes}
-            renderItem={renderRepositoryCard}
-            pagination={{pageSize: 4}}
-        />
+        isRepositorySearch ?
+            <RepositorySearchPage searchVariables={searchVariables}/> :
+            <UserSearchPage searchVariables={searchVariables}/>
     );
 }
