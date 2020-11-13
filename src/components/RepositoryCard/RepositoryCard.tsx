@@ -8,11 +8,11 @@ import { Typography } from 'antd';
 const {Text} = Typography;
 
 interface RepositoryCardProps {
-    name: string,
-    description: string,
-    pushedAt: string,
-    stargazerCount: number,
-    languages: Language[],
+    name: string;
+    description: string;
+    pushedAt: string;
+    stargazerCount: number;
+    languages: Language[];
 }
 const months = ["JAN", "FEB", "MAR","APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
 

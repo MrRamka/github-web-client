@@ -1,6 +1,6 @@
 import { gql } from 'apollo-boost';
 
-export const get_repositories = gql`
+export const GET_SEARCH_QUERY = gql`
 query ($count: Int!, $type: SearchType!, $query: String!) {
   search(first: $count, type: $type, query: $query) {
     nodes {
@@ -18,7 +18,26 @@ query ($count: Int!, $type: SearchType!, $query: String!) {
           totalCount
         }
       }
+      ... on User {
+        login,
+        url,
+        avatarUrl,
+        name,
+        email,
+        bio,
+        followers {
+          totalCount
+        },
+        following {
+          totalCount
+        }
+        repositories {
+          totalCount
+        }
+      }
     }
   }
 }
 `;
+
+export default GET_SEARCH_QUERY;
