@@ -43,7 +43,7 @@ export const RepositoryStar: FC<RepositoryStarProps> = ({ count, hasStarred, id 
             setCountStars(data.removeStar.starrable.stargazerCount);
             setStarred(data.removeStar.starrable.viewerHasStarred);
         }).catch(() => message.error(Errors.ACCESS_RESTRICTED,4));
-    }, [id, removeStar])
+    }, [id, removeStar, emptyData])
 
     return (
         <Wrapper>
