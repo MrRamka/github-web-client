@@ -5,6 +5,7 @@ export interface RepositorySearchInfo {
 }
 
 export interface RepositoryNode {
+    id: string,
     nameWithOwner: string,
     url: string,
     description: string,
@@ -48,5 +49,5 @@ export interface UserNode {
 
 export enum TypeName {
     USER = 'User',
-    ORGANISATION = 'Organization',
+    ORGANIZATION = 'Organization',
 }

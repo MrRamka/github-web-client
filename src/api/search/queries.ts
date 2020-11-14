@@ -5,6 +5,7 @@ query ($count: Int!, $type: SearchType!, $query: String!) {
   search(first: $count, type: $type, query: $query) {
     nodes {
       ... on Repository {
+        id
         nameWithOwner
         url
         description

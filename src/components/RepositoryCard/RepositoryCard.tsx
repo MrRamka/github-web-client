@@ -14,10 +14,11 @@ interface RepositoryCardProps {
     stargazerCount: number;
     languages: Language[];
     hasStarred: boolean;
+    id: string;
 }
 const months = ["JAN", "FEB", "MAR","APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
 
-export const RepositoryCard: FC<RepositoryCardProps> = ({name, description, pushedAt, stargazerCount, languages, hasStarred}) => {
+export const RepositoryCard: FC<RepositoryCardProps> = ({name, description, pushedAt, stargazerCount, languages, hasStarred, id}) => {
 
     const date = new Date(Date.parse(pushedAt));
     const formatted_date = date.getDate() + "-" + months[date.getMonth()] + "-" + date.getFullYear()
@@ -28,7 +29,7 @@ export const RepositoryCard: FC<RepositoryCardProps> = ({name, description, push
             <br/>
             <br/>
             <Text>Updated: {formatted_date}</Text>
-            <RepositoryStar count={stargazerCount} hasStarred={hasStarred}/>
+            <RepositoryStar count={stargazerCount} hasStarred={hasStarred} id={id}/>
             <RepositoryLanguage languages={languages}/>
         </RepositoryPreviewCard>
     );

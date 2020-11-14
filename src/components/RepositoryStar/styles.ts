@@ -10,10 +10,12 @@ export const Wrapper = styled.div`
 
 export const StyledStarFilled = styled(StarFilled)`
     color: ${Colors.orange_4};
+    cursor: pointer;
     font-size: 1.2rem;
 `;
 
 export const StyledStarOutlined = styled(StarOutlined)`
     color: ${Colors.orange_4};
+    cursor: pointer;
     font-size: 1.2rem;
 `

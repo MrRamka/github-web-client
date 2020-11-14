@@ -19,7 +19,7 @@ export const UserSearchPage: FC<UserSearchPageProps> = ({searchVariables}) => {
 
     useEffect(() => {
         if (!loading) {
-            const users = data?.search.nodes.filter((value) => value.__typename !== TypeName.ORGANISATION);
+            const users = data?.search.nodes.filter((value) => value.__typename !== TypeName.ORGANIZATION);
             setUserResult(users ?? []);
         }
     }, [loading, data]);

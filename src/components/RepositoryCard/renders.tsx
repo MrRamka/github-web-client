@@ -11,5 +11,6 @@ export const renderRepositoryCard = (item: RepositoryNode) => (
         languages={item.languages.nodes}
         stargazerCount={item.stargazerCount}
         hasStarred={item.viewerHasStarred}
+        id={item.id}
     />
 )
