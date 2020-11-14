@@ -18,6 +18,7 @@ export interface RepositoryNode {
         totalCount: number
     },
     totalCount: number,
+    viewerHasStarred: boolean,
 }
 
 export interface UserSearchInfo {

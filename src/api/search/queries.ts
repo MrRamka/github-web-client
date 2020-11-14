@@ -17,6 +17,7 @@ query ($count: Int!, $type: SearchType!, $query: String!) {
           }
           totalCount
         }
+        viewerHasStarred
       }
       ... on User {
         login,
