@@ -9,7 +9,7 @@ type RepositorySearchPageProps = {
     searchVariables: SearchVariables;
 }
 
-export const RepositorySearchPage: FC<RepositorySearchPageProps> = ({searchVariables}) => {
+export const SearchRepositoriesList: FC<RepositorySearchPageProps> = ({searchVariables}) => {
 
     const [repositoryResult, setRepositoryResult] = useState<RepositoryNode[]>([])
 

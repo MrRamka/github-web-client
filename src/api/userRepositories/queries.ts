@@ -5,6 +5,7 @@ export const GET_USER_REPOSITORIES = gql`
         viewer {
             repositories(first: $count){
                 nodes {
+                    id
                     nameWithOwner
                     url
                     description
@@ -17,6 +18,7 @@ export const GET_USER_REPOSITORIES = gql`
                         }
                         totalCount
                     }
+                    viewerHasStarred
                 }
             }
         }
