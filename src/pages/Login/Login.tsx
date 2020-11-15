@@ -19,7 +19,7 @@ import { PageWrapper } from '../../shared';
 
 export const Login: FC = () => {
 
-    const url = `https://github.com/login/oauth/authorize?client_id=${CLIENT_ID}&scope=user&redirect_uri=${REDIRECT_URI}`;
+    const url = `https://github.com/login/oauth/authorize?client_id=${CLIENT_ID}&scope=user,gist,public_repo&redirect_uri=${REDIRECT_URI}`;
 
     return (
         <PageWrapper>
