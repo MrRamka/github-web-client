@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { SearchTypes } from '../types';
 import { SearchVariables } from './types';
-import { RepositorySearchPage } from '../../RepositorySearchPage';
+import { SearchRepositoriesList } from '../../SearchRepositoriesList';
 import { UserSearchPage } from '../../UserSearchPage';
 
 
@@ -23,7 +23,7 @@ export const ResultList: FC<ResultListProps> = ({value, searchType}) => {
 
     return (
         isRepositorySearch ?
-            <RepositorySearchPage searchVariables={searchVariables}/> :
+            <SearchRepositoriesList searchVariables={searchVariables}/> :
             <UserSearchPage searchVariables={searchVariables}/>
     );
 }
