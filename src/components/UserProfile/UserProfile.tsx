@@ -1,32 +1,34 @@
 import React, { FC, useEffect, useState } from 'react';
-import { useQuery } from '@apollo/client';
-import { GET_PROFILE_QUERY, ProfileNode } from '../../api/profile';
+import { useParams } from 'react-router';
 import { RepositoryNode } from '../../api/search';
-import { ProfileWrapper } from './styles';
+import { useQuery } from '@apollo/client';
+import { GET_USER_QUERY, UserProfileNode } from '../../api/user';
+import { emptyUserProfileInfo } from '../Profile/types';
+import { ProfileWrapper } from '../Profile/styles';
+import { Col, Row } from 'antd';
 import { ProfileInfo } from '../ProfileInfo';
 import { PinnedItems } from '../PinnedItems';
-import { Col, Row } from 'antd';
-import { emptyProfileInfo } from './types';
 
-type Props = {}
+export const UserProfile: FC = () => {
 
-export const Profile: FC<Props> = () => {
+    const {username: login } = useParams();
 
     const pinnedItemAmount = 4;
 
-    const [profileInfo, setProfileInfo] = useState<ProfileNode>(emptyProfileInfo);
+    const [profileInfo, setProfileInfo] = useState<UserProfileNode>(emptyUserProfileInfo);
     const [pinnedItems, setPinnedItems] = useState<RepositoryNode[]>([]);
 
-    const {loading, data} = useQuery<ProfileNode>(GET_PROFILE_QUERY, {
+    const {loading, data} = useQuery<UserProfileNode>(GET_USER_QUERY, {
         variables: {
-            count: pinnedItemAmount
+            count: pinnedItemAmount,
+            login: login
         }
     });
 
     useEffect(() => {
         if (!loading) {
-            setProfileInfo(data ?? emptyProfileInfo);
-            setPinnedItems(data?.viewer?.pinnedItems?.nodes ?? [])
+            setProfileInfo(data ?? emptyUserProfileInfo);
+            setPinnedItems(data?.user?.pinnedItems?.nodes ?? [])
         }
     }, [loading, data])
 
@@ -35,7 +37,7 @@ export const Profile: FC<Props> = () => {
             <Row justify="start">
                 <Col span={16}>
                     <Row>
-                        <ProfileInfo data={profileInfo.viewer}/>
+                        <ProfileInfo data={profileInfo.user}/>
                     </Row>
                 </Col>
                 <Col span={8}>

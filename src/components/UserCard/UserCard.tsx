@@ -1,10 +1,11 @@
-import React, { FC, useMemo } from 'react';
+import React, { FC, useCallback, useMemo } from 'react';
 import { UserNode } from '../../api/search';
 import { Avatar, List, Typography } from 'antd';
 import { Colors, IconText } from '../../shared';
 import { DatabaseOutlined, UserOutlined } from '@ant-design/icons/lib';
 import { ListItem, StyledCard } from './styles';
 import { makeNullStringToEmptyString } from '../../helpers';
+import { useHistory } from 'react-router';
 
 const {Text} = Typography;
 
@@ -20,6 +21,8 @@ export const UserCard: FC<UserNode> = (
         repositories
     }) => {
 
+    const history = useHistory();
+
     const actions = useMemo(() => [
         <IconText icon={<UserOutlined style={{color: Colors.blue_6}}/>}
                   text={makeNullStringToEmptyString(followers?.totalCount?.toString())}/>,
@@ -29,8 +32,13 @@ export const UserCard: FC<UserNode> = (
                   text={makeNullStringToEmptyString(repositories?.totalCount?.toString())}/>
     ], [following, followers, repositories]);
 
+    const handleClick = useCallback(() => {
+        history.push(`/users/${login}`);
+        console.log(login);
+    }, [history, login]);
+
     return (
-        <StyledCard>
+        <StyledCard onClick={handleClick}>
             <ListItem
                 key={login}
                 actions={[...actions]}

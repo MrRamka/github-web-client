@@ -10,6 +10,6 @@ export enum Routes {
 	REPOSITORIES = '/repositories',
 	REPOSITORY = '/repository/:username/:repository',
 	// Check this: https://stackoverflow.com/questions/30012770/regex-for-username
-	USER = ' /users/:username',
+	USER = '/users/:username',
 	LOGOUT = '/logout'
 }

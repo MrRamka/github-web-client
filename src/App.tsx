@@ -14,6 +14,7 @@ import { PullRequests } from './pages/PullRequests';
 import { Explore } from './pages/Explore';
 import { Repositories } from './pages/Repositories';
 import { Repository } from './pages/Repository';
+import { UserProfilePage } from './pages/UserProfile';
 
 
 function App() {
@@ -31,7 +32,7 @@ function App() {
                     <PrivateRoute exact path={R.EXPLORE} component={Explore}/>
                     <PrivateRoute exact path={R.REPOSITORIES} component={Repositories}/>
                     <PrivateRoute exact path={R.REPOSITORY} component={Repository}/>
-                    <PrivateRoute exact path={R.USER} component={ProfilePage}/>
+                    <PrivateRoute path={R.USER} component={UserProfilePage}/>
                     <Redirect to={R.ROOT}/>
                 </Switch>
             </Router>
