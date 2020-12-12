@@ -5,8 +5,8 @@ import { ProfileInfo } from '../../components/ProfileInfo';
 import { PinnedItems } from '../../components/PinnedItems';
 import { BaseProfileNode } from '../../api/profile';
 import { RepositoryNode } from '../../api/search';
-import GitHubCalendar from 'react-github-calendar';
-import { ContributionCalendar } from './styles';
+import { ContributionCalendarWrapper } from './styles';
+import { ContributionCalendar } from '../../components/Calendar';
 
 type BaseUserProfileProps = {
     user: BaseProfileNode;
@@ -24,15 +24,10 @@ export const BaseUserProfile: FC<BaseUserProfileProps> = ({user, pinnedItems, lo
                         <ProfileInfo data={user}/>
                     </Row>
                     <Row>
-                        <ContributionCalendar>
+                        <ContributionCalendarWrapper>
                             <h2>Contribution Calendar</h2>
-                            <GitHubCalendar
-                                username={user.login}
-                                color="hsl(203, 82%, 33%)"
-                                blockSize={16}
-                                fontSize={16}
-                            />
-                        </ContributionCalendar>
+                            <ContributionCalendar login={user.login} calendarData={user.contributionsCollection.contributionCalendar}/>
+                        </ContributionCalendarWrapper>
                     </Row>
                 </Col>
                 <Col span={8}>

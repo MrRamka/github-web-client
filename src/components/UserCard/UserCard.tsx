@@ -34,7 +34,6 @@ export const UserCard: FC<UserNode> = (
 
     const handleClick = useCallback(() => {
         history.push(`/users/${login}`);
-        console.log(login);
     }, [history, login]);
 
     return (

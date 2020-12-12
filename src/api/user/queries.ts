@@ -3,7 +3,8 @@ import { gql } from 'apollo-boost';
 export const GET_USER_QUERY = gql`
 query($login: String!, $count: Int!) { 
   user(login: $login) {
-     login,
+    id,
+    login,
     name, 
     followers {
       totalCount
@@ -31,6 +32,17 @@ query($login: String!, $count: Int!) {
         }
         viewerHasStarred
       }
+      }
+    }
+    contributionsCollection{
+      contributionCalendar{
+        totalContributions
+        weeks {
+          contributionDays {
+            contributionCount,
+            date
+          }
+        }
       }
     }
   }

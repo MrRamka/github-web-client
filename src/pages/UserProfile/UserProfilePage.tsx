@@ -5,7 +5,6 @@ import { Content, LayoutWrapper, PageWrapper } from '../../shared';
 import { UserProfile } from '../../components/UserProfile';
 
 export const UserProfilePage: FC = () => {
-    console.log('adsasda');
     return (
         <PageWrapper>
             <LayoutWrapper>

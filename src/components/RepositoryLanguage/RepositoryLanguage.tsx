@@ -11,7 +11,7 @@ export const RepositoryLanguage: FC<RepositoryLanguageProps> = ({languages}) => 
 
     return (
         <>
-            {languages.map(value => <Tag style={{margin: '0.2rem'}} color={value.color}>{value.name}</Tag>)}
+            {languages.map(value => <Tag  key={value.color + new Date()} style={{margin: '0.2rem'}} color={value.color}>{value.name}</Tag>)}
         </>
     )
 }

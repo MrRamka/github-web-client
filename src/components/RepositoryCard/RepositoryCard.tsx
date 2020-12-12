@@ -16,21 +16,29 @@ interface RepositoryCardProps {
     hasStarred: boolean;
     id: string;
 }
-const months = ["JAN", "FEB", "MAR","APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
 
-export const RepositoryCard: FC<RepositoryCardProps> = ({name, description, pushedAt, stargazerCount, languages, hasStarred, id}) => {
+const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
 
-    const date = new Date(Date.parse(pushedAt));
-    const formatted_date = date.getDate() + "-" + months[date.getMonth()] + "-" + date.getFullYear()
+export const RepositoryCard: FC<RepositoryCardProps> =
+    ({
+         name,
+         description,
+         pushedAt,
+         stargazerCount,
+         languages,
+         hasStarred,
+         id
+     }) => {
 
-    return (
-        <RepositoryPreviewCard title={name}>
-            {description}
-            <br/>
-            <br/>
-            <Text>Updated: {formatted_date}</Text>
-            <RepositoryStar count={stargazerCount} hasStarred={hasStarred} id={id}/>
-            <RepositoryLanguage languages={languages}/>
-        </RepositoryPreviewCard>
-    );
-}
+        const date = new Date(Date.parse(pushedAt));
+        const formatted_date = date.getDate() + '-' + months[date.getMonth()] + '-' + date.getFullYear()
+
+        return (
+            <RepositoryPreviewCard title={name}>
+                {description ? (<>{description} <br/><br/></>) : null}
+                <Text>Updated: {formatted_date}</Text>
+                <RepositoryStar count={stargazerCount} hasStarred={hasStarred} id={id}/>
+                <RepositoryLanguage languages={languages}/>
+            </RepositoryPreviewCard>
+        );
+    }
