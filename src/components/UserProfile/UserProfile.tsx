@@ -4,10 +4,7 @@ import { RepositoryNode } from '../../api/search';
 import { useQuery } from '@apollo/client';
 import { GET_USER_QUERY, UserProfileNode } from '../../api/user';
 import { emptyUserProfileInfo } from '../Profile/types';
-import { ProfileWrapper } from '../Profile/styles';
-import { Col, Row } from 'antd';
-import { ProfileInfo } from '../ProfileInfo';
-import { PinnedItems } from '../PinnedItems';
+import { BaseUserProfile } from '../../pages/UserProfile/BaseUserProfile';
 
 export const UserProfile: FC = () => {
 
@@ -33,19 +30,6 @@ export const UserProfile: FC = () => {
     }, [loading, data])
 
     return (
-        <ProfileWrapper>
-            <Row justify="start">
-                <Col span={16}>
-                    <Row>
-                        <ProfileInfo data={profileInfo.user}/>
-                    </Row>
-                </Col>
-                <Col span={8}>
-                    <Row>
-                        <PinnedItems pinnedItems={pinnedItems} loading={loading}/>
-                    </Row>
-                </Col>
-            </Row>
-        </ProfileWrapper>
+        <BaseUserProfile user={profileInfo.user} loading={loading} pinnedItems={pinnedItems}/>
     );
 }

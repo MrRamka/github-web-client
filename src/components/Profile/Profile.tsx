@@ -2,11 +2,8 @@ import React, { FC, useEffect, useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { GET_PROFILE_QUERY, ProfileNode } from '../../api/profile';
 import { RepositoryNode } from '../../api/search';
-import { ProfileWrapper } from './styles';
-import { ProfileInfo } from '../ProfileInfo';
-import { PinnedItems } from '../PinnedItems';
-import { Col, Row } from 'antd';
 import { emptyProfileInfo } from './types';
+import { BaseUserProfile } from '../../pages/UserProfile/BaseUserProfile';
 
 type Props = {}
 
@@ -31,19 +28,6 @@ export const Profile: FC<Props> = () => {
     }, [loading, data])
 
     return (
-        <ProfileWrapper>
-            <Row justify="start">
-                <Col span={16}>
-                    <Row>
-                        <ProfileInfo data={profileInfo.viewer}/>
-                    </Row>
-                </Col>
-                <Col span={8}>
-                    <Row>
-                        <PinnedItems pinnedItems={pinnedItems} loading={loading}/>
-                    </Row>
-                </Col>
-            </Row>
-        </ProfileWrapper>
+        <BaseUserProfile user={profileInfo.viewer} loading={loading} pinnedItems={pinnedItems}/>
     );
 }
