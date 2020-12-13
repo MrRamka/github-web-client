@@ -7,6 +7,7 @@ import { PoppinsText } from '../../shared/PoppinsText';
 
 interface UserInfo {
     viewer: {
+        id: string
         avatarUrl: string,
         name: string,
         login: string,
@@ -17,6 +18,7 @@ interface UserInfo {
 const GET_USER_INFO = gql`
 	query GetUserAvatar{
   		viewer {
+  		    id
     		avatarUrl
       		name
       		login

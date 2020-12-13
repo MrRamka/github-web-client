@@ -4,7 +4,7 @@ import { Routes as R } from './constants';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 import { Login } from './pages/Login';
 import { LoginOAuth } from './pages/LoginOAuth';
-import { Profile } from './pages/Profile';
+import { ProfilePage } from './pages/Profile';
 import { PrivateRoute } from './components/PrivateRouter';
 import { ApolloProvider } from '@apollo/client';
 import { client } from './api';
@@ -14,6 +14,7 @@ import { PullRequests } from './pages/PullRequests';
 import { Explore } from './pages/Explore';
 import { Repositories } from './pages/Repositories';
 import { Repository } from './pages/Repository';
+import { UserProfilePage } from './pages/UserProfile';
 
 
 function App() {
@@ -24,14 +25,14 @@ function App() {
                 <Switch>
                     <Route exact path={R.LOGIN} component={Login}/>
                     <Route exact path={R.OATH_LOGIN} component={LoginOAuth}/>
-                    <PrivateRoute exact path={[R.ROOT, R.PROFILE]} component={Profile}/>
+                    <PrivateRoute exact path={[R.ROOT, R.PROFILE]} component={ProfilePage}/>
                     <PrivateRoute exact path={R.LOGOUT} component={Logout}/>
                     <PrivateRoute exact path={R.ISSUES} component={Issues}/>
                     <PrivateRoute exact path={R.PULL_REQUESTS} component={PullRequests}/>
                     <PrivateRoute exact path={R.EXPLORE} component={Explore}/>
                     <PrivateRoute exact path={R.REPOSITORIES} component={Repositories}/>
                     <PrivateRoute exact path={R.REPOSITORY} component={Repository}/>
-                    <PrivateRoute exact path={R.USER} component={Profile}/>
+                    <PrivateRoute path={R.USER} component={UserProfilePage}/>
                     <Redirect to={R.ROOT}/>
                 </Switch>
             </Router>
