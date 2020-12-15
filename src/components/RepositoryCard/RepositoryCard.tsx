@@ -5,6 +5,7 @@ import { RepositoryStar } from '../RepositoryStar';
 import { RepositoryLanguage } from '../RepositoryLanguage';
 import { Typography } from 'antd';
 import { useHistory } from 'react-router';
+import { formatDate } from '../../helpers/formatDate';
 
 const {Text} = Typography;
 
@@ -19,8 +20,6 @@ interface RepositoryCardProps {
     hasStarred: boolean;
     id: string;
 }
-
-const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
 
 /**
  * Search repository card
@@ -38,11 +37,7 @@ export const RepositoryCard: FC<RepositoryCardProps> =
          id
      }) => {
 
-        /**
-         * Format date
-         */
-        const date = new Date(Date.parse(pushedAt));
-        const formatted_date = date.getDate() + '-' + months[date.getMonth()] + '-' + date.getFullYear()
+        const formatted_date = formatDate(pushedAt);
         const history = useHistory()
         const handleClick = useCallback(() => { history.push(`/repository/${owner}/${name}`) }, [history, owner, name])
         return (
