@@ -10,9 +10,13 @@ import { Colors } from '../../shared';
 
 type Props = {
     login: string;
-    calendarData:ContributionCalendarConnNode
+    calendarData: ContributionCalendarConnNode;
 }
 
+/**
+ * Component creates Contribution Calendar by ContributionCalendarConnNode
+ * @see ContributionCalendarConnNode:
+ */
 export const ContributionCalendar: FC<Props> = ({calendarData}) => {
     /**
      * State

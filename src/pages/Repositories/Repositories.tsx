@@ -4,6 +4,9 @@ import { NavigationMenu } from '../../components/NavigationMenu';
 import { Layout } from 'antd';
 import { UserRepositoriesList } from '../../components/UserRepositoriesList';
 
+/**
+ * User own Repositories
+ */
 export const Repositories: FC = () => {
     return (
         <PageWrapper>

@@ -3,6 +3,10 @@ import { Content, LayoutWrapper, PageWrapper } from '../../shared';
 import { NavigationMenu } from '../../components/NavigationMenu';
 import { Layout } from 'antd';
 
+
+/**
+ * Any user repository page
+ */
 export const Repository: FC = () => {
     return (
         <PageWrapper>

@@ -20,8 +20,11 @@ type Props = {
     url: string;
 }
 
+/**
+ * Component for render profile info text
+ * @constructor
+ */
 export const ProfileInfoText: FC<Props> = ({name, login, followers, following, url}) => {
-
 
     return (
         <InfoWrapper>

@@ -19,6 +19,9 @@ interface RepositoryCardProps {
 
 const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
 
+/**
+ * Search repository card
+ */
 export const RepositoryCard: FC<RepositoryCardProps> =
     ({
          name,
@@ -30,6 +33,9 @@ export const RepositoryCard: FC<RepositoryCardProps> =
          id
      }) => {
 
+        /**
+         * Format date
+         */
         const date = new Date(Date.parse(pushedAt));
         const formatted_date = date.getDate() + '-' + months[date.getMonth()] + '-' + date.getFullYear()
 

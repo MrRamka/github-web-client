@@ -13,6 +13,9 @@ interface RepositoryStarProps {
     id: string,
 }
 
+/**
+ * Render and update repository star
+ */
 export const RepositoryStar: FC<RepositoryStarProps> = ({ count, hasStarred, id }) => {
     const emptyData: AddStarResponse = useMemo(() => {
         return {
@@ -29,6 +32,9 @@ export const RepositoryStar: FC<RepositoryStarProps> = ({ count, hasStarred, id 
     const [addStar] = useMutation<AddStarResponse>(ADD_STARR_QUERY);
     const [removeStar] = useMutation(REMOVE_STARR_QUERY);
 
+    /**
+     * Add star function
+     */
     const handleAddStar = useCallback(() => {
         addStar({ variables: { id } }).then(value => {
             const data: AddStarResponse = value.data ?? emptyData;
@@ -37,6 +43,9 @@ export const RepositoryStar: FC<RepositoryStarProps> = ({ count, hasStarred, id 
         }).catch(() => message.error(Errors.ACCESS_RESTRICTED,4));
     }, [id, setCountStars, setStarred, addStar, emptyData]);
 
+    /**
+     * Remove star function
+     */
     const handleRemoveStar = useCallback(() => {
         removeStar({ variables: { id } }).then(value => {
             const data: RemoveStarResponse = value.data ?? emptyData;

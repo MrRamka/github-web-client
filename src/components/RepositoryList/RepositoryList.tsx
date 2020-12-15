@@ -10,6 +10,10 @@ export type RepositoryListProps = {
     pinnedCard?: boolean;
 }
 
+/**
+ * List of Repositories
+ * @see List
+ */
 export const RepositoryList: FC<RepositoryListProps> = ({data, loading, pageSize = 4, pinnedCard= false}) => {
 
     return (

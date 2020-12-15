@@ -4,8 +4,12 @@ import { RepositoryNode } from '../../api/search';
 import { useQuery } from '@apollo/client';
 import { GET_USER_QUERY, UserProfileNode } from '../../api/user';
 import { emptyUserProfileInfo } from '../Profile/types';
-import { BaseUserProfile } from '../../pages/UserProfile/BaseUserProfile';
+import { BaseUserProfile } from './BaseUserProfile';
 
+/**
+ * User Profile by uri param
+ * @see BaseUserProfile
+ */
 export const UserProfile: FC = () => {
 
     const {username: login } = useParams();

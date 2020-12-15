@@ -5,6 +5,9 @@ import { Layout } from 'antd';
 import { ExploreList } from '../../components/ExploreList';
 
 
+/**
+ * Component for searching a repository or user
+ */
 export const Explore: FC = () => {
     return (
         <PageWrapper>

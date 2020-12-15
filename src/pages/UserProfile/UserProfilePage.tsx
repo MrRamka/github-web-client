@@ -4,6 +4,9 @@ import { NavigationMenu } from '../../components/NavigationMenu';
 import { Content, LayoutWrapper, PageWrapper } from '../../shared';
 import { UserProfile } from '../../components/UserProfile';
 
+/**
+ * Any user profile page
+ */
 export const UserProfilePage: FC = () => {
     return (
         <PageWrapper>

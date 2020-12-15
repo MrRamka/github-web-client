@@ -5,6 +5,11 @@ import { RepositoryList } from '../RepositoryList';
 import { UserRepositories } from '../../api/userRepositories';
 import { GET_USER_REPOSITORIES } from '../../api/userRepositories/queries';
 
+
+/**
+ * List of User Repositories
+ * @see RepositoryList
+ */
 export const UserRepositoriesList: FC = () => {
     const searchVariables = {
         count: 10,

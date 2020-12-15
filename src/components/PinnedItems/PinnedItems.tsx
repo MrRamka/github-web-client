@@ -8,6 +8,9 @@ type PinnedItemsProps = {
     loading: boolean;
 }
 
+/**
+ * Pinned Repositories in UserProfile/Profile pages
+ */
 export const PinnedItems: FC<PinnedItemsProps> = ({pinnedItems, loading}) => {
 
     return (
