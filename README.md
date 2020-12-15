@@ -19,11 +19,11 @@ Steps to run your project locally
 3. Create `.env` file and add
 
 
-````
-REACT_APP_AUTH_API_URI=heroku-gatekeeper-url
-REACT_APP_REDIRECT_URI=http://localhost:3000/login/oauth/access_token/
-REACT_APP_CLIENT_ID=github-oauth-client-id
-````
+
+REACT_APP_AUTH_API_URI=`YOUR_HEROKU_URL`
+REACT_APP_REDIRECT_URI=`http://localhost:3000/login/oauth/access_token/`
+REACT_APP_CLIENT_ID=`YOUR_GITHUB_CLIENT_ID`
+
 
 4. Install all packages using `yarn` command  
 
