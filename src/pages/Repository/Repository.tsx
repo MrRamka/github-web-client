@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { Content, LayoutWrapper, PageWrapper } from '../../shared';
 import { NavigationMenu } from '../../components/NavigationMenu';
 import { Layout } from 'antd';
+import { RepositoryPage } from '../../components/RepositoryPage';
 
 
 /**
@@ -14,7 +15,7 @@ export const Repository: FC = () => {
                 <NavigationMenu/>
                 <Layout>
                     <Content>
-                        Repository
+                        <RepositoryPage/>
                     </Content>
                 </Layout>
             </LayoutWrapper>

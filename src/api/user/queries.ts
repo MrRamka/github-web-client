@@ -18,7 +18,11 @@ query($login: String!, $count: Int!) {
       nodes {
         ... on Repository {
         id
+        name  
         nameWithOwner
+        owner {
+          login
+        }
         url
         description
         pushedAt
