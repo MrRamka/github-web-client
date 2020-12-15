@@ -9,6 +9,9 @@ import { useHistory } from 'react-router';
 
 const {Text} = Typography;
 
+/**
+ * Search user card
+ */
 export const UserCard: FC<UserNode> = (
     {
         name,

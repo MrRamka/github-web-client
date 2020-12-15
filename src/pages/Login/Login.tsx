@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { CLIENT_ID, REDIRECT_URI } from '../../constants';
+import { CLIENT_ID, REDIRECT_URI, Links as L } from '../../constants';
 import {
     BlueLinkOutline,
     ButtonWrapper,
@@ -14,7 +14,6 @@ import {
     WelcomeText,
     Wrapper
 } from './styles';
-import { Links as L } from '../../constants';
 import { PageWrapper } from '../../shared';
 
 /**

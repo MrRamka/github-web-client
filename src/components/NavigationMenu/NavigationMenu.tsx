@@ -31,6 +31,10 @@ type navType = {
     onClick: () => void;
 }
 
+/**
+ * Navigation menu component
+ * Creates menu by uri
+ */
 export const NavigationMenu: FC = () => {
 
     const history = useHistory();

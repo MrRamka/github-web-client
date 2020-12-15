@@ -6,7 +6,9 @@ interface RepositoryLanguageProps {
     languages: Language[],
 
 }
-
+/**
+ * Repository Language List component
+ */
 export const RepositoryLanguage: FC<RepositoryLanguageProps> = ({languages}) => {
 
     return (

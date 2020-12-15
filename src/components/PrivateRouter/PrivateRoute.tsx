@@ -8,7 +8,10 @@ type PrivateRouteProps = {
     exact?: boolean,
     component: any;
 }
-
+/**
+ * Wrapper for Route
+ * Allows use Route only for authenticated users
+ */
 export const PrivateRoute: FC<PrivateRouteProps> = ({...params}) => {
     const userToken = localStorage.getItem('github_token');
     return !isNil(userToken) ? <Route {...params} /> : <Redirect to={R.LOGIN}/>

@@ -3,6 +3,9 @@ import { Routes as R } from '../constants';
 
 const httpLink = new HttpLink({uri: R.API});
 
+/**
+ * Add github token to Apollo Client
+ */
 const authLink = new ApolloLink((operation, forward) => {
     // Retrieve the authorization token from local storage.
     const token = localStorage.getItem('github_token');
@@ -18,6 +21,9 @@ const authLink = new ApolloLink((operation, forward) => {
     return forward(operation);
 });
 
+/**
+ * Apollo Client fo API calls
+ */
 export const client = new ApolloClient({
     link: authLink.concat(httpLink), // Chain it with the HttpLink
     cache: new InMemoryCache()

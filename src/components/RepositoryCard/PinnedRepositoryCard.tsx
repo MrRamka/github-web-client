@@ -13,6 +13,11 @@ interface RepositoryCardProps {
     id: string;
 }
 
+/**
+ * Single Pinned Repository Card component
+ * @see RepositoryPreviewCard
+ * @see RepositoryLanguage
+ */
 export const PinnedRepositoryCard: FC<RepositoryCardProps> = ({name, languages}) => {
 
     return (

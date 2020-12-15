@@ -14,6 +14,9 @@ type BaseUserProfileProps = {
     pinnedItems: RepositoryNode[];
 }
 
+/**
+ * Component for rendering user profile
+ */
 export const BaseUserProfile: FC<BaseUserProfileProps> = ({user, pinnedItems, loading}) => {
 
     return (
