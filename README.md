@@ -1,10 +1,35 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Installation
 
-## Available Scripts
+Steps to run your project locally
 
-In the project directory, you can run:
+### 1. OAuth stuff
 
-### `yarn start`
+1. [Register an OAuth app in github](https://developer.github.com/apps/building-oauth-apps/creating-an-oauth-app/)
+2. [Deploy an instance of Gatekeeper to heroku](https://github.com/prose/gatekeeper#deploy-on-heroku) 
+
+
+
+### 2. Local preparation
+
+1. `git clone https://github.com/MrRamka/github-web-client.git` 
+   
+   or `git clone git@github.com:MrRamka/github-web-client.git`
+   
+2. `cd github-web-client.git`
+3. Create `.env` file and add
+
+
+
+REACT_APP_AUTH_API_URI=`YOUR_HEROKU_URL`
+REACT_APP_REDIRECT_URI=`http://localhost:3000/login/oauth/access_token/`
+REACT_APP_CLIENT_ID=`YOUR_GITHUB_CLIENT_ID`
+
+
+4. Install all packages using `yarn` command  
+
+### 3. Run project
+
+`yarn start`
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -12,12 +37,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
+`yarn build`
 
 Builds the app for production to the `build` folder.<br />
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -25,20 +45,42 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Contributing
 
-### `yarn eject`
+###Project structure
+```
+src 
+├───api 
+│   ├───index.ts 
+│   └───ApiName 
+│	    ├───index.ts 
+│	    ├───queries.ts 
+│	    └───types.ts 
+├───components 
+│   └───Component
+│	    ├───index.ts
+│	    ├───styles.ts
+│	    ├───Component.tsx
+│	    └───types.ts
+├───constants
+│   ├───index.ts
+│   └───const.ts
+├───helpers
+│   ├───index.ts
+│   └───helper.ts
+├───pages
+│   └───Page
+│	 ├───index.ts
+│	 └───Page.tsx
+└───shared
+    ├───index.ts
+    └───SharedComponent.tsx
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Best way to keep up to date is check the issues. We really welcome improvements for all aspects of an app.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Any suggestions/improvements/bugs can be in the form of Pull Requests, or creating an issue.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+##License
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Released under the MIT License. Check [LICENSE.md](https://github.com/MrRamka/github-web-client/blob/master/LICENSE) for more info.
