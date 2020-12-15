@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { CLIENT_ID, REDIRECT_URI } from '../../constants/oath';
+import { CLIENT_ID, REDIRECT_URI } from '../../constants';
 import {
     BlueLinkOutline,
     ButtonWrapper,
@@ -17,8 +17,15 @@ import {
 import { Links as L } from '../../constants';
 import { PageWrapper } from '../../shared';
 
+/**
+ * Component for Login Page
+ */
 export const Login: FC = () => {
 
+    /**
+     * OAuth url for authorization
+     * And redirect to LoginOAuth
+     */
     const url = `https://github.com/login/oauth/authorize?client_id=${CLIENT_ID}&scope=user,gist,public_repo&redirect_uri=${REDIRECT_URI}`;
 
     return (

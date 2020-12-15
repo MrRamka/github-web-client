@@ -3,7 +3,7 @@ import { useQuery } from '@apollo/client';
 import { GET_PROFILE_QUERY, ProfileNode } from '../../api/profile';
 import { RepositoryNode } from '../../api/search';
 import { emptyProfileInfo } from './types';
-import { BaseUserProfile } from '../../pages/UserProfile/BaseUserProfile';
+import { BaseUserProfile } from '../UserProfile/BaseUserProfile';
 
 type Props = {}
 
