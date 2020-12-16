@@ -5,6 +5,7 @@ import { RepositoryDescription } from '../RepositoryDescription';
 import React, { FC, useCallback } from 'react';
 import { RepositoryFile, RepositoryNode } from '../../api/repository';
 import { useHistory } from 'react-router';
+import {UsernameWrapper} from './styles';
 
 type RepositoryOpenedProps = {
     username: string;
@@ -31,7 +32,7 @@ export const RepositoryOpened: FC<RepositoryOpenedProps> = ({username, repositor
     return (
         <>
             <Title style={{fontWeight: 'lighter'}}>
-                <span onClick={handleClick}>{username}</span>/{repository}
+                <UsernameWrapper onClick={handleClick}>{username}</UsernameWrapper>/{repository}
             </Title>
             <Row justify="space-between">
                 <Col span={18}>

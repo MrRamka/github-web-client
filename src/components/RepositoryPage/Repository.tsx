@@ -7,6 +7,9 @@ import { RepositoryClosed } from '../RepositoryClosed';
 
 const initialRepository: RepositoryNode = {
     repository: {
+        viewerHasStarred: false,
+        stargazerCount: 0,
+        id: '',
         createdAt: '',
         description: '',
         diskUsage: 0,

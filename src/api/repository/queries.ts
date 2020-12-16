@@ -10,6 +10,11 @@ export const GET_REPOSITORY = gql`
             isArchived
             isPrivate
             description
+            
+            viewerHasStarred
+            stargazerCount
+            id
+            
             languages(first: 10, orderBy: {direction: DESC, field: SIZE}) {
                 nodes {
                     name
