@@ -6,7 +6,11 @@ export const GET_USER_REPOSITORIES = gql`
             repositories(first: $count){
                 nodes {
                     id
+                    name
                     nameWithOwner
+                    owner {
+                        login
+                    }
                     url
                     description
                     pushedAt

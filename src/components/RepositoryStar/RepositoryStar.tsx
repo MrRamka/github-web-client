@@ -35,7 +35,8 @@ export const RepositoryStar: FC<RepositoryStarProps> = ({ count, hasStarred, id 
     /**
      * Add star function
      */
-    const handleAddStar = useCallback(() => {
+    const handleAddStar = useCallback((event: React.MouseEvent<HTMLElement>) => {
+        event.stopPropagation()
         addStar({ variables: { id } }).then(value => {
             const data: AddStarResponse = value.data ?? emptyData;
             setCountStars(data.addStar.starrable.stargazerCount);
@@ -46,7 +47,8 @@ export const RepositoryStar: FC<RepositoryStarProps> = ({ count, hasStarred, id 
     /**
      * Remove star function
      */
-    const handleRemoveStar = useCallback(() => {
+    const handleRemoveStar = useCallback((event: React.MouseEvent<HTMLElement>) => {
+        event.stopPropagation()
         removeStar({ variables: { id } }).then(value => {
             const data: RemoveStarResponse = value.data ?? emptyData;
             setCountStars(data.removeStar.starrable.stargazerCount);

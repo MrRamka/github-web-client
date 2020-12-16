@@ -3,11 +3,15 @@ import { RepositoryCard } from './RepositoryCard';
 import React from 'react';
 import { PinnedRepositoryCard } from './PinnedRepositoryCard';
 
-
+/**
+ * Renderers for Repository Card
+ */
 export const renderRepositoryCard = (item: RepositoryNode) => (
     <RepositoryCard
         key={item.id + new Date()}
-        name={item.nameWithOwner}
+        name={item.name}
+        nameWithOwner={item.nameWithOwner}
+        owner={item.owner.login}
         description={item.description}
         pushedAt={item.pushedAt}
         languages={item.languages.nodes}
@@ -20,7 +24,9 @@ export const renderRepositoryCard = (item: RepositoryNode) => (
 export const renderPinnedRepositoryCard = (item: RepositoryNode) => (
     <PinnedRepositoryCard
         key={item.id + new Date()}
-        name={item.nameWithOwner}
+        name={item.name}
+        nameWithOwner={item.nameWithOwner}
+        owner={item.owner.login}
         description={item.description}
         pushedAt={item.pushedAt}
         languages={item.languages.nodes}
