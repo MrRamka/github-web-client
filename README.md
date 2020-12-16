@@ -47,7 +47,7 @@ Your app is ready to be deployed!
 
 ## Contributing
 
-###Project structure
+### Project structure
 ```
 src 
 ├───api 
@@ -81,6 +81,6 @@ Best way to keep up to date is check the issues. We really welcome improvements 
 
 Any suggestions/improvements/bugs can be in the form of Pull Requests, or creating an issue.
 
-##License
+### License
 
 Released under the MIT License. Check [LICENSE.md](https://github.com/MrRamka/github-web-client/blob/master/LICENSE) for more info.
