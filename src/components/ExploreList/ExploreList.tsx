@@ -3,6 +3,9 @@ import { GlobalSearch } from '../Search';
 import { ResultList } from '../Search/components/ResultList';
 import { SearchTypes } from '../Search/types';
 
+/**
+ * Component for search page
+ */
 export const ExploreList: FC = () => {
 
     const [searchValue, setSearchValue] = useState<string>('');

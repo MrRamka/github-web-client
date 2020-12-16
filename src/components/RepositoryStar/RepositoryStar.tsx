@@ -13,6 +13,9 @@ interface RepositoryStarProps {
     id: string,
 }
 
+/**
+ * Render and update repository star
+ */
 export const RepositoryStar: FC<RepositoryStarProps> = ({ count, hasStarred, id }) => {
     const emptyData: AddStarResponse = useMemo(() => {
         return {
@@ -29,7 +32,11 @@ export const RepositoryStar: FC<RepositoryStarProps> = ({ count, hasStarred, id 
     const [addStar] = useMutation<AddStarResponse>(ADD_STARR_QUERY);
     const [removeStar] = useMutation(REMOVE_STARR_QUERY);
 
-    const handleAddStar = useCallback(() => {
+    /**
+     * Add star function
+     */
+    const handleAddStar = useCallback((event: React.MouseEvent<HTMLElement>) => {
+        event.stopPropagation()
         addStar({ variables: { id } }).then(value => {
             const data: AddStarResponse = value.data ?? emptyData;
             setCountStars(data.addStar.starrable.stargazerCount);
@@ -37,7 +44,11 @@ export const RepositoryStar: FC<RepositoryStarProps> = ({ count, hasStarred, id 
         }).catch(() => message.error(Errors.ACCESS_RESTRICTED,4));
     }, [id, setCountStars, setStarred, addStar, emptyData]);
 
-    const handleRemoveStar = useCallback(() => {
+    /**
+     * Remove star function
+     */
+    const handleRemoveStar = useCallback((event: React.MouseEvent<HTMLElement>) => {
+        event.stopPropagation()
         removeStar({ variables: { id } }).then(value => {
             const data: RemoveStarResponse = value.data ?? emptyData;
             setCountStars(data.removeStar.starrable.stargazerCount);

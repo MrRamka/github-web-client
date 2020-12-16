@@ -6,7 +6,11 @@ export interface RepositorySearchInfo {
 
 export interface RepositoryNode {
     id: string,
+    name: string;
     nameWithOwner: string,
+    owner: {
+        login: string,
+    },
     url: string,
     description: string,
     pushedAt: string,

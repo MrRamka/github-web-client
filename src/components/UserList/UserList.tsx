@@ -9,6 +9,10 @@ export type UserListProps = {
     pageSize?: number;
 }
 
+/**
+ * List of Users
+ * @see List
+ */
 export const UserList: FC<UserListProps> = ({data, loading, pageSize = 8}) => {
 
     return (

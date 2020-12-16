@@ -31,6 +31,10 @@ type navType = {
     onClick: () => void;
 }
 
+/**
+ * Navigation menu component
+ * Creates menu by uri
+ */
 export const NavigationMenu: FC = () => {
 
     const history = useHistory();
@@ -110,18 +114,23 @@ export const NavigationMenu: FC = () => {
             if (newUrl === R.ISSUES) {
                 return MenuType.ISSUES;
             }
-            if (newUrl === R.PULL_REQUESTS){
+            if (newUrl === R.PULL_REQUESTS) {
                 return MenuType.PULL_REQUESTS;
             }
-            if (newUrl === R.REPOSITORIES){
+            if (newUrl === R.REPOSITORIES) {
                 return MenuType.REPOSITORIES;
             }
-            if (newUrl === R.EXPLORE){
+            if (newUrl === R.EXPLORE) {
                 return MenuType.EXPLORE;
             }
+
             return MenuType.PROFILE;
         }, [urlName]
     );
+
+    const handleProfileClick = useCallback(() => {
+        history.push(R.PROFILE)
+    }, [history]);
 
     return (
         <Sider width={MENU_NAVIGATION_WIDTH} theme="light">
@@ -129,7 +138,7 @@ export const NavigationMenu: FC = () => {
                 <AppTitle/>
             </TitleBlock>
 
-            <AvatarBlock>
+            <AvatarBlock onClick={handleProfileClick}>
                 <UserInfo/>
             </AvatarBlock>
             <Menu

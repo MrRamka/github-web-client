@@ -12,6 +12,9 @@ interface GlobalSearchProps {
     setSearchType: (type: SearchTypes) => void;
 }
 
+/**
+ * Search component
+ */
 export const GlobalSearch: FC<GlobalSearchProps> = ({setSearchValue, setSearchType}) => {
 
     const history = useHistory();
@@ -20,6 +23,11 @@ export const GlobalSearch: FC<GlobalSearchProps> = ({setSearchValue, setSearchTy
         setSearchType(value);
     }, [setSearchType])
 
+    /**
+     * Search type
+     * SearchTypes.REPOSITORY or SearchTypes.USER
+     * @see SearchTypes
+     */
     const selectSearchItem = useMemo(() => (
         <Select defaultValue={SearchTypes.REPOSITORY} className="select-before" style={{width: 150}}
                 onChange={onChangeSearchType}>

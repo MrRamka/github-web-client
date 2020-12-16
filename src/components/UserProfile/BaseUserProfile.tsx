@@ -1,12 +1,12 @@
 import React, { FC } from 'react';
-import { ProfileWrapper } from '../../components/Profile/styles';
+import { ProfileWrapper } from '../Profile/styles';
 import { Col, Row } from 'antd';
-import { ProfileInfo } from '../../components/ProfileInfo';
-import { PinnedItems } from '../../components/PinnedItems';
+import { ProfileInfo } from '../ProfileInfo';
+import { PinnedItems } from '../PinnedItems';
 import { BaseProfileNode } from '../../api/profile';
 import { RepositoryNode } from '../../api/search';
 import { ContributionCalendarWrapper } from './styles';
-import { ContributionCalendar } from '../../components/Calendar';
+import { ContributionCalendar } from '../Calendar';
 
 type BaseUserProfileProps = {
     user: BaseProfileNode;
@@ -14,6 +14,9 @@ type BaseUserProfileProps = {
     pinnedItems: RepositoryNode[];
 }
 
+/**
+ * Component for rendering user profile
+ */
 export const BaseUserProfile: FC<BaseUserProfileProps> = ({user, pinnedItems, loading}) => {
 
     return (

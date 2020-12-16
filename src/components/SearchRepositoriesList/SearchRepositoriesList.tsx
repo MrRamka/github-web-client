@@ -9,14 +9,23 @@ type RepositorySearchPageProps = {
     searchVariables: SearchVariables;
 }
 
+/**
+ * Repository search result list
+ */
 export const SearchRepositoriesList: FC<RepositorySearchPageProps> = ({searchVariables}) => {
 
     const [repositoryResult, setRepositoryResult] = useState<RepositoryNode[]>([])
 
+    /**
+     * Get data from server
+     */
     const {loading, data} = useQuery<RepositorySearchInfo>(GET_SEARCH_QUERY, {
         variables: {...searchVariables}
     })
 
+    /**
+     * Update data
+     */
     useEffect(() => {
         if (!loading) {
             setRepositoryResult(data?.search.nodes ?? []);

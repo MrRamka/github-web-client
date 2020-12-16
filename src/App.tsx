@@ -13,7 +13,7 @@ import { Issues } from './pages/Issues';
 import { PullRequests } from './pages/PullRequests';
 import { Explore } from './pages/Explore';
 import { Repositories } from './pages/Repositories';
-import { Repository } from './pages/Repository';
+import { RepositoryPage } from './pages/Repository';
 import { UserProfilePage } from './pages/UserProfile';
 
 
@@ -31,7 +31,7 @@ function App() {
                     <PrivateRoute exact path={R.PULL_REQUESTS} component={PullRequests}/>
                     <PrivateRoute exact path={R.EXPLORE} component={Explore}/>
                     <PrivateRoute exact path={R.REPOSITORIES} component={Repositories}/>
-                    <PrivateRoute exact path={R.REPOSITORY} component={Repository}/>
+                    <PrivateRoute exact path={R.REPOSITORY} component={RepositoryPage}/>
                     <PrivateRoute path={R.USER} component={UserProfilePage}/>
                     <Redirect to={R.ROOT}/>
                 </Switch>

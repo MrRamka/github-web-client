@@ -8,6 +8,9 @@ type Props = {
     data: BaseProfileNode;
 }
 
+/**
+ * Profile info component
+ */
 export const ProfileInfo: FC<Props> = ({data}) => {
 
     return (

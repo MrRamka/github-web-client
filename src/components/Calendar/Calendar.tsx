@@ -16,6 +16,11 @@ interface State {
     maxWidth: number
 }
 
+/**
+ * GitHub ContributionCalendar
+ * Code from https://github.com/haripo/react-github-contribution-calendar
+ * Inconvenient package. No possibility to change cell size.
+ */
 export default class GitHubCalendar extends React.Component<Props, State> {
     monthLabelHeight: number;
     weekLabelWidth: number;
