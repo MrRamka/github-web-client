@@ -2,20 +2,20 @@ import React, { FC } from 'react';
 import { Content, LayoutWrapper, PageWrapper } from '../../shared';
 import { NavigationMenu } from '../../components/NavigationMenu';
 import { Layout } from 'antd';
-import { RepositoryPage } from '../../components/RepositoryPage';
+import { Repository } from '../../components/RepositoryPage';
 
 
 /**
  * Any user repository page
  */
-export const Repository: FC = () => {
+export const RepositoryPage: FC = () => {
     return (
         <PageWrapper>
             <LayoutWrapper>
                 <NavigationMenu/>
                 <Layout>
                     <Content>
-                        <RepositoryPage/>
+                        <Repository/>
                     </Content>
                 </Layout>
             </LayoutWrapper>

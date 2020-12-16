@@ -1,4 +1,4 @@
-export interface Repository {
+export interface RepositoryNode {
     repository: {
         createdAt: string,
         isArchived: boolean,

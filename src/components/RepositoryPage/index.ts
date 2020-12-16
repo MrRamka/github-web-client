@@ -1,1 +1,1 @@
-export * from './RepositoryPage'
+export * from './Repository'

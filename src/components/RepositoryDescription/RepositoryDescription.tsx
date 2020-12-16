@@ -1,14 +1,17 @@
 import React, { FC } from 'react';
 import { Card } from 'antd';
-import { Repository } from '../../api/repository';
+import { RepositoryNode } from '../../api/repository';
 import { formatDate } from '../../helpers/formatDate';
 import { RepositoryLanguage } from '../RepositoryLanguage';
 
 type RepositoryDescriptionProps = {
-    info: Repository;
+    info: RepositoryNode;
     loading: boolean;
 }
 
+/**
+ * Description component for repository
+ */
 export const RepositoryDescription: FC<RepositoryDescriptionProps> = ({info, loading}) => {
     const formatted_date = formatDate(info.repository.createdAt);
     return (

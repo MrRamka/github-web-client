@@ -3,7 +3,9 @@ import { RepositoryCard } from './RepositoryCard';
 import React from 'react';
 import { PinnedRepositoryCard } from './PinnedRepositoryCard';
 
-
+/**
+ * Renderers for Repository Card
+ */
 export const renderRepositoryCard = (item: RepositoryNode) => (
     <RepositoryCard
         key={item.id + new Date()}

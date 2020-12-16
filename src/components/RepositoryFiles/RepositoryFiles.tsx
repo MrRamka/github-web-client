@@ -8,7 +8,12 @@ type RepositoryFilesProps = {
     files: RepositoryFile[];
     loading: boolean;
 }
+
 type GetRowKey = React.Component<TableProps<RepositoryFile>>['props']['rowKey'];
+
+/**
+ * Table for repository files
+ */
 export const RepositoryFiles: FC<RepositoryFilesProps> = ({files, loading}) => {
     const rowKey: GetRowKey = useCallback((file) => file.oid, [])
     const columns: ColumnsType<RepositoryFile> = useMemo(() => [
