@@ -3,10 +3,10 @@ import { Layout, Menu } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import 'antd/dist/antd.css';
 import {
-    BranchesOutlined,
+    //BranchesOutlined,
     DatabaseOutlined,
     LogoutOutlined,
-    QuestionCircleOutlined,
+    //QuestionCircleOutlined,
     SearchOutlined
 } from '@ant-design/icons/lib';
 import { MENU_NAVIGATION_WIDTH, MenuType } from './types';
@@ -72,7 +72,7 @@ export const NavigationMenu: FC = () => {
                 icon: <UserOutlined style={iconStyle}/>,
                 onClick: () => handleClick(MenuType.PROFILE),
             },
-            {
+            /*{
                 name: <PoppinsSpan>Issues</PoppinsSpan>,
                 key: MenuType.ISSUES,
                 icon: <QuestionCircleOutlined style={iconStyle}/>,
@@ -83,7 +83,7 @@ export const NavigationMenu: FC = () => {
                 key: MenuType.PULL_REQUESTS,
                 icon: <BranchesOutlined style={iconStyle}/>,
                 onClick: () => handleClick(MenuType.PULL_REQUESTS),
-            },
+            },*/
             {
                 name: <PoppinsSpan>Explore</PoppinsSpan>,
                 key: MenuType.EXPLORE,
@@ -111,12 +111,12 @@ export const NavigationMenu: FC = () => {
             if (newUrl === R.ROOT || urlName === R.PROFILE) {
                 return MenuType.PROFILE;
             }
-            if (newUrl === R.ISSUES) {
+            /* if (newUrl === R.ISSUES) {
                 return MenuType.ISSUES;
             }
             if (newUrl === R.PULL_REQUESTS) {
                 return MenuType.PULL_REQUESTS;
-            }
+            }*/
             if (newUrl === R.REPOSITORIES) {
                 return MenuType.REPOSITORIES;
             }
