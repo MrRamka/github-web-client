@@ -4,7 +4,7 @@ import React from 'react';
 import { PinnedRepositoryCard } from './PinnedRepositoryCard';
 
 /**
- * Renderers for Repository Card
+ * Renderers for RepositoryPage Card
  */
 export const renderRepositoryCard = (item: RepositoryNode) => (
     <RepositoryCard

@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { Content, LayoutWrapper, PageWrapper } from '../../shared';
 import { NavigationMenu } from '../../components/NavigationMenu';
 import { Layout } from 'antd';
-import { Repository } from '../../components/RepositoryPage';
+import { Repository } from '../../components/Repository';
 
 
 /**

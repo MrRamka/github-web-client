@@ -6,7 +6,7 @@ import { FileTwoTone, FolderTwoTone } from '@ant-design/icons';
 type RenderColumnFunction = Required<ColumnType<RepositoryFile>>['render'];
 
 /**
- * Renderers for Repository Files table
+ * Renderers for RepositoryPage Files table
  */
 export const renderIsBinary: RenderColumnFunction = (_, file) => (
     file.object.isBinary ? <span>binary</span> : <span>non-binary</span>

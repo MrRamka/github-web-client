@@ -10,7 +10,7 @@ type RepositorySearchPageProps = {
 }
 
 /**
- * Repository search result list
+ * RepositoryPage search result list
  */
 export const SearchRepositoriesList: FC<RepositorySearchPageProps> = ({searchVariables}) => {
 
