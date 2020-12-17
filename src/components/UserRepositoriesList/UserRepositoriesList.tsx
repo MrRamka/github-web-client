@@ -7,7 +7,7 @@ import { GET_USER_REPOSITORIES } from '../../api/userRepositories/queries';
 
 
 /**
- * List of User Repositories
+ * List of User RepositoriesPage
  * @see RepositoryList
  */
 export const UserRepositoriesList: FC = () => {

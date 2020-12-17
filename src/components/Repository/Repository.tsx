@@ -25,7 +25,7 @@ const initialRepository: RepositoryNode = {
 };
 
 /**
- Repository component
+ RepositoryPage component
  */
 export const Repository: FC = () => {
     /**

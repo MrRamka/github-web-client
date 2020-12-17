@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Card } from 'antd';
 import { RepositoryNode } from '../../api/repository';
-import { formatDate } from '../../helpers/formatDate';
+import { formatDate } from '../../helpers';
 import { RepositoryLanguage } from '../RepositoryLanguage';
 import { RepositoryStar } from '../RepositoryStar';
 

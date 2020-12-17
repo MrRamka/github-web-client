@@ -7,7 +7,7 @@ import { emptyUserProfileInfo } from '../Profile/types';
 import { BaseUserProfile } from './BaseUserProfile';
 
 /**
- * User Profile by uri param
+ * User ProfilePage by uri param
  * @see BaseUserProfile
  */
 export const UserProfile: FC = () => {

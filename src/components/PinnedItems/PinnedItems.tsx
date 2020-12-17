@@ -9,7 +9,7 @@ type PinnedItemsProps = {
 }
 
 /**
- * Pinned Repositories in UserProfile/Profile pages
+ * Pinned RepositoriesPage in UserProfile/ProfilePage pages
  */
 export const PinnedItems: FC<PinnedItemsProps> = ({pinnedItems, loading}) => {
 

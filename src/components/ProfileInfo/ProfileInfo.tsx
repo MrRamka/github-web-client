@@ -9,7 +9,7 @@ type Props = {
 }
 
 /**
- * Profile info component
+ * ProfilePage info component
  */
 export const ProfileInfo: FC<Props> = ({data}) => {
 
