@@ -13,7 +13,7 @@ import { UserInfoBlock } from '../UserInfoBlock';
  * @see RepositoryList
  */
 export const RepositoriesList: FC = () => {
-    const {username: login } = useParams();
+    const { username: login } = useParams();
 
     const searchVariables = {
         count: 10,
