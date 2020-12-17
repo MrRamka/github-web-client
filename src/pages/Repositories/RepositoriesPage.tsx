@@ -2,18 +2,19 @@ import React, { FC } from 'react';
 import { Content, LayoutWrapper, PageWrapper } from '../../shared';
 import { NavigationMenu } from '../../components/NavigationMenu';
 import { Layout } from 'antd';
+import { UserRepositoriesList } from '../../components/UserRepositoriesList';
 
 /**
-* Component for users Pull Requests
-*/
-export const PullRequests: FC = () => {
+ * User own RepositoriesPage
+ */
+export const RepositoriesPage: FC = () => {
     return (
         <PageWrapper>
             <LayoutWrapper>
                 <NavigationMenu/>
                 <Layout>
                     <Content>
-                        Pull Requests
+                        <UserRepositoriesList/>
                     </Content>
                 </Layout>
             </LayoutWrapper>

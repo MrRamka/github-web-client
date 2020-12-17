@@ -12,5 +12,6 @@ export enum Routes {
 	// Check this: https://stackoverflow.com/questions/30012770/regex-for-username
 	USER = '/users/:username',
 	USER_REPOSITORY = '/repositories/:username',
-	LOGOUT = '/logout'
+	LOGOUT = '/logout',
+	NOT_FOUND = '/not_found'
 }
