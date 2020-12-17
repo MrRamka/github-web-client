@@ -15,6 +15,7 @@ import { Explore } from './pages/Explore';
 import { RepositoriesPage } from './pages/Repositories';
 import { RepositoryPage } from './pages/Repository';
 import { UserProfilePage } from './pages/UserProfile';
+import { UserRepositoriesPage } from './pages/UserRepositories';
 import { NotFoundPage } from './pages/NotFound';
 
 
@@ -34,6 +35,7 @@ function App() {
                     <PrivateRoute exact path={R.REPOSITORIES} component={RepositoriesPage}/>
                     <PrivateRoute exact path={R.REPOSITORY} component={RepositoryPage}/>
                     <PrivateRoute path={R.USER} component={UserProfilePage}/>
+                    <PrivateRoute exact path={R.USER_REPOSITORY} component={UserRepositoriesPage}/>
                     <PrivateRoute path={R.NOT_FOUND} component={NotFoundPage}/>
                     <Redirect to={R.NOT_FOUND}/>
                 </Switch>
