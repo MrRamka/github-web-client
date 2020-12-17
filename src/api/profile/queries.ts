@@ -37,7 +37,29 @@ query($count: Int!) {
         viewerHasStarred
       }
       }
-    }
+    },
+    repositories(first: $count){
+      nodes {
+        id
+        name
+        nameWithOwner
+        owner {
+          login
+        }
+        url
+        description
+        pushedAt
+        stargazerCount
+        languages(first: 10, orderBy: {direction: DESC, field: SIZE}) {
+          nodes {
+            name
+            color
+          }
+          totalCount
+        }
+        viewerHasStarred
+      }
+    },
     contributionsCollection{
       contributionCalendar{
         totalContributions

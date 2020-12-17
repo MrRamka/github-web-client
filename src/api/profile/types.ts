@@ -20,6 +20,9 @@ export interface BaseProfileNode {
     pinnedItems: {
         nodes: RepositoryNode[];
     }
+    repositories: {
+        nodes: RepositoryNode[],
+    }
     contributionsCollection: {
         contributionCalendar: ContributionCalendarConnNode;
     }
