@@ -1,9 +1,12 @@
 import React, { FC, useEffect, useState } from 'react';
 import { useQuery } from '@apollo/client';
-import { GET_REPOSITORY, RepositoryNode, RepositoryFile } from '../../api/repository';
+import { GET_REPOSITORY, RepositoryFile, RepositoryNode } from '../../api/repository';
 import { useParams } from 'react-router';
 import { RepositoryOpened } from '../RepositoryOpened';
 import { RepositoryClosed } from '../RepositoryClosed';
+import { Spin } from 'antd';
+import { ApolloError } from '@apollo/client/errors';
+import { NotFoundPage } from '../../pages/NotFound';
 
 const initialRepository: RepositoryNode = {
     repository: {
@@ -38,11 +41,12 @@ export const Repository: FC = () => {
     const [open, setOpen] = useState<boolean>(true);
     const [repositoryInfo, setRepositoryInfo] = useState<RepositoryNode>(initialRepository);
     const [repositoryFiles, setRepositoryFiles] = useState<RepositoryFile[]>([]);
+    const [errors, setErrors] = useState<ApolloError>();
 
     /**
      * Get data from server
      */
-    const {loading, data} = useQuery<RepositoryNode>(GET_REPOSITORY, {
+    const {loading, data, error} = useQuery<RepositoryNode>(GET_REPOSITORY, {
         variables: {
             name: repository,
             owner: username,
@@ -54,6 +58,10 @@ export const Repository: FC = () => {
      */
     useEffect(() => {
         if (!loading) {
+            if (error) {
+                setErrors(error);
+                return;
+            }
             setRepositoryInfo(data ?? initialRepository);
             if (data?.repository?.isArchived || data?.repository?.isPrivate ||
                 data?.repository?.isDisabled || data?.repository?.isEmpty ||
@@ -63,15 +71,25 @@ export const Repository: FC = () => {
             }
             setRepositoryFiles(data?.repository?.object.entries ?? [])
         }
-    }, [loading, data])
+    }, [loading, data, error])
 
     return (
-        <>
-            {open ? (
-                    <RepositoryOpened loading={loading} files={repositoryFiles} info={repositoryInfo}
-                                      repository={repository} username={username}/>) :
-                    <RepositoryClosed/>
+        <Spin spinning={loading}>
+            {!errors ?
+                <>
+                    {open ?
+                        <RepositoryOpened
+                            loading={loading}
+                            files={repositoryFiles}
+                            info={repositoryInfo}
+                            repository={repository}
+                            username={username}
+                        /> :
+                        <RepositoryClosed/>
+                    }
+                </> :
+                <NotFoundPage subTitle={errors?.message}/>
             }
-        </>
+        </Spin>
     );
 }

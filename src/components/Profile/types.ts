@@ -14,6 +14,9 @@ export const baseEmptyProfileInfo: BaseProfileNode = {
     following: {totalCount: 0},
     login: '',
     name: '',
+    repositories: {
+        nodes: [],
+    },
     pinnedItems: {nodes: []},
     url: ''
 }
