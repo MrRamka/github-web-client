@@ -15,6 +15,7 @@ import { Explore } from './pages/Explore';
 import { RepositoriesPage } from './pages/Repositories';
 import { RepositoryPage } from './pages/Repository';
 import { UserProfilePage } from './pages/UserProfile';
+import { NotFoundPage } from './pages/NotFound';
 
 
 function App() {
@@ -33,7 +34,8 @@ function App() {
                     <PrivateRoute exact path={R.REPOSITORIES} component={RepositoriesPage}/>
                     <PrivateRoute exact path={R.REPOSITORY} component={RepositoryPage}/>
                     <PrivateRoute path={R.USER} component={UserProfilePage}/>
-                    <Redirect to={R.ROOT}/>
+                    <PrivateRoute path={R.NOT_FOUND} component={NotFoundPage}/>
+                    <Redirect to={R.NOT_FOUND}/>
                 </Switch>
             </Router>
         </ApolloProvider>
