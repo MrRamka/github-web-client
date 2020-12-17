@@ -17,7 +17,7 @@ interface RepositoryCardProps {
 }
 
 /**
- * Single Pinned Repository Card component
+ * Single Pinned RepositoryPage Card component
  * @see RepositoryPreviewCard
  * @see RepositoryLanguage
  */

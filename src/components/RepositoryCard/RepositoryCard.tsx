@@ -5,7 +5,7 @@ import { RepositoryStar } from '../RepositoryStar';
 import { RepositoryLanguage } from '../RepositoryLanguage';
 import { Typography } from 'antd';
 import { useHistory } from 'react-router';
-import { formatDate } from '../../helpers/formatDate';
+import { formatDate } from '../../helpers';
 
 const {Text} = Typography;
 
