@@ -9,7 +9,16 @@ export const GET_REPOSITORY = gql`
             }
             isArchived
             isPrivate
+            isDisabled
+            isEmpty
+            isLocked
+            isSecurityPolicyEnabled
             description
+            
+            viewerHasStarred
+            stargazerCount
+            id
+            
             languages(first: 10, orderBy: {direction: DESC, field: SIZE}) {
                 nodes {
                     name

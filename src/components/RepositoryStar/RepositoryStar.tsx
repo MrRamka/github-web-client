@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useMemo, useState } from 'react';
+import React, { FC, useCallback, useEffect, useMemo, useState } from 'react';
 import Text from 'antd/es/typography/Text';
 import { StyledStarFilled, StyledStarOutlined, Wrapper } from './styles';
 import { useMutation } from '@apollo/client';
@@ -32,6 +32,10 @@ export const RepositoryStar: FC<RepositoryStarProps> = ({ count, hasStarred, id 
     const [addStar] = useMutation<AddStarResponse>(ADD_STARR_QUERY);
     const [removeStar] = useMutation(REMOVE_STARR_QUERY);
 
+    useEffect(() => {
+        setCountStars(count);
+    }, [count]);
+
     /**
      * Add star function
      */
@@ -41,7 +45,7 @@ export const RepositoryStar: FC<RepositoryStarProps> = ({ count, hasStarred, id 
             const data: AddStarResponse = value.data ?? emptyData;
             setCountStars(data.addStar.starrable.stargazerCount);
             setStarred(data.addStar.starrable.viewerHasStarred);
-        }).catch(() => message.error(Errors.ACCESS_RESTRICTED,4));
+        }).catch(() => message.error(Errors.ACCESS_RESTRICTED, 7));
     }, [id, setCountStars, setStarred, addStar, emptyData]);
 
     /**
@@ -53,7 +57,7 @@ export const RepositoryStar: FC<RepositoryStarProps> = ({ count, hasStarred, id 
             const data: RemoveStarResponse = value.data ?? emptyData;
             setCountStars(data.removeStar.starrable.stargazerCount);
             setStarred(data.removeStar.starrable.viewerHasStarred);
-        }).catch(() => message.error(Errors.ACCESS_RESTRICTED,4));
+        }).catch(() => message.error(Errors.ACCESS_RESTRICTED, 7));
     }, [id, removeStar, emptyData])
 
     return (

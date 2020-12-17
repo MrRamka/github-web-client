@@ -1,1 +1,1 @@
-export * from './PullRequests';
+export * from './PullRequestsPage';

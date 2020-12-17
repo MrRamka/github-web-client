@@ -7,7 +7,7 @@ interface RepositoryLanguageProps {
 
 }
 /**
- * Repository Language List component
+ * RepositoryPage Language List component
  */
 export const RepositoryLanguage: FC<RepositoryLanguageProps> = ({languages}) => {
 

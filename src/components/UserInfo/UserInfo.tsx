@@ -2,7 +2,7 @@ import React, { FC, useEffect, useState } from 'react';
 import { Avatar } from 'antd';
 import { useQuery } from '@apollo/client';
 import { AvatarCell, StyledDiv } from './styles';
-import { PoppinsText } from '../../shared/PoppinsText';
+import { PoppinsText } from '../../shared';
 import { GET_USER_INFO, UserInfoNode } from '../../api/userInfo';
 
 /**

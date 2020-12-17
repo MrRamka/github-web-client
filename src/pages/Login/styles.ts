@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Colors } from '../../shared';
 import { GithubOutlined } from '@ant-design/icons/lib';
-import { PoppinsText } from '../../shared/PoppinsText';
+import { PoppinsText } from '../../shared';
 
 export const Wrapper = styled.div`
 	height: 90vh;

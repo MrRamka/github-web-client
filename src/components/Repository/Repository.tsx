@@ -7,18 +7,25 @@ import { RepositoryClosed } from '../RepositoryClosed';
 
 const initialRepository: RepositoryNode = {
     repository: {
+        viewerHasStarred: false,
+        stargazerCount: 0,
+        id: '',
         createdAt: '',
         description: '',
         diskUsage: 0,
         isArchived: false,
         isPrivate: false,
+        isDisabled: false,
+        isEmpty: false,
+        isLocked: false,
+        isSecurityPolicyEnabled: false,
         languages: {nodes: [{color: '', name: ''}], totalCount: 0},
         object: {entries: []}
     }
 };
 
 /**
- Repository component
+ RepositoryPage component
  */
 export const Repository: FC = () => {
     /**
@@ -48,7 +55,9 @@ export const Repository: FC = () => {
     useEffect(() => {
         if (!loading) {
             setRepositoryInfo(data ?? initialRepository);
-            if (data?.repository.isArchived || data?.repository?.isPrivate) {
+            if (data?.repository?.isArchived || data?.repository?.isPrivate ||
+                data?.repository?.isDisabled || data?.repository?.isEmpty ||
+                data?.repository?.isLocked || data?.repository?.isSecurityPolicyEnabled) {
                 setOpen(false);
                 return;
             }

@@ -3,9 +3,16 @@ export interface RepositoryNode {
         createdAt: string,
         isArchived: boolean,
         isPrivate: boolean,
-
+        isDisabled: boolean,
+        isEmpty: boolean,
+        isLocked: boolean,
+        isSecurityPolicyEnabled: boolean,
         description: string,
         diskUsage: number,
+
+        viewerHasStarred: boolean,
+        stargazerCount: number,
+        id: string,
 
         languages: {
             nodes: [{
