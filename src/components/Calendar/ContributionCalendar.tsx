@@ -51,7 +51,7 @@ export const ContributionCalendar: FC<Props> = ({calendarData}) => {
 
 
     const date = new Date();
-    const until = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDay();
+    const until = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
 
     /**
      * Calendar colors
