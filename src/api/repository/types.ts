@@ -3,7 +3,10 @@ export interface RepositoryNode {
         createdAt: string,
         isArchived: boolean,
         isPrivate: boolean,
-
+        isDisabled: boolean,
+        isEmpty: boolean,
+        isLocked: boolean,
+        isSecurityPolicyEnabled: boolean,
         description: string,
         diskUsage: number,
 

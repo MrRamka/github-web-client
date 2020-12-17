@@ -9,6 +9,10 @@ export const GET_REPOSITORY = gql`
             }
             isArchived
             isPrivate
+            isDisabled
+            isEmpty
+            isLocked
+            isSecurityPolicyEnabled
             description
             
             viewerHasStarred

@@ -17,7 +17,7 @@ export const RepositoryClosed = () => {
         history.goBack()
     }, [history])
     return (
-        <Result status="warning" title="This repository is archived or private."
+        <Result status="warning" title="Sorry, can not access this repository."
                 extra={
                     <Button type="primary" key="console" onClick={handleClick}>
                         Go Back
