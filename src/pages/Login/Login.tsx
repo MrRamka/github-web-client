@@ -40,7 +40,7 @@ export const Login: FC = () => {
                             <WelcomeText>
                                 <Title>Github Web Client</Title>
                                 Simple. Beautiful. Practish. Good.
-                                a
+                                <br/>
                                 <br/>
                                 A minimal React application using Apollo Client with GitHub's GraphQL API.
                                 <br/>
