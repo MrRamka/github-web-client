@@ -5,7 +5,7 @@ import { RepositoryDescription } from '../RepositoryDescription';
 import React, { FC, useCallback } from 'react';
 import { RepositoryFile, RepositoryNode } from '../../api/repository';
 import { useHistory } from 'react-router';
-import {UsernameWrapper} from './styles';
+import { UsernameWrapper } from './styles';
 
 type RepositoryOpenedProps = {
     username: string;
