@@ -15,6 +15,7 @@ import {
     Wrapper
 } from './styles';
 import { PageWrapper } from '../../shared';
+import Title from 'antd/lib/typography/Title';
 
 /**
  * Component for Login Page
@@ -37,13 +38,13 @@ export const Login: FC = () => {
                     <InnerDiv>
                         <div>
                             <WelcomeText>
-                                It is a long established fact that a reader will be distracted by the readable content
-                                of a
+                                <Title>Github Web Client</Title>
+                                Simple. Beautiful. Practish. Good.
+                                a
                                 <br/>
+                                A minimal React application using Apollo Client with GitHub's GraphQL API.
                                 <br/>
-                                page when looking at its layout. The point of using Lorem Ipsum is that it has a
-                                more-or-less normal distribution of letters, as opposed to using 'Content here, content
-                                here', making it look like readable English.
+                                Easy-to-use client for viewing git repositories. Perfect UI/UX for the best experience. Enjoy our product!
                             </WelcomeText>
                         </div>
                         <ButtonWrapper>
