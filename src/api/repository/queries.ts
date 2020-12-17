@@ -9,6 +9,10 @@ export const GET_REPOSITORY = gql`
             }
             isArchived
             isPrivate
+            isDisabled
+            isEmpty
+            isLocked
+            isSecurityPolicyEnabled
             description
             languages(first: 10, orderBy: {direction: DESC, field: SIZE}) {
                 nodes {
