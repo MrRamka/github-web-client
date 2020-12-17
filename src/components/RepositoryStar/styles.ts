@@ -4,8 +4,8 @@ import { Colors } from '../../shared';
 
 
 export const Wrapper = styled.div`
-    margin-top: 1.2 rem;
-    margin-right: 2 rem;    
+    margin-top: 1.2rem;
+    margin-right: 2rem;    
 `;
 
 export const StyledStarFilled = styled(StarFilled)`

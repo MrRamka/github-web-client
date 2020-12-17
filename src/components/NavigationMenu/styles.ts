@@ -16,4 +16,5 @@ export const TitleBlock = styled.div`
 
 export const AvatarBlock = styled.div`
 	margin: 2em;
+    cursor: pointer;
 `;

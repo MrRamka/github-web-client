@@ -7,6 +7,10 @@ export interface RepositoryNode {
         description: string,
         diskUsage: number,
 
+        viewerHasStarred: boolean,
+        stargazerCount: number,
+        id: string,
+
         languages: {
             nodes: [{
                 name: string,
