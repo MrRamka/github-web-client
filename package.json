@@ -1,6 +1,5 @@
 {
   "name": "github-web-client",
-  "homepage": "http://MrRamka.github.io/github-web-client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
