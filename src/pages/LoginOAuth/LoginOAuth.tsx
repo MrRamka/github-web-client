@@ -19,7 +19,7 @@ export const LoginOAuth: FC = () => {
         const code = window.location.href.match(/\?code=(.*)/);
         if (code) {
             const newCode = code.pop();
-            fetch(`${AUTH_API_URI}${newCode}`)
+            fetch(`${AUTH_API_URI}${newCode}/`)
                 .then(response => response.json())
                 .then(({token}) => {
                     localStorage.setItem('github_token', token);
