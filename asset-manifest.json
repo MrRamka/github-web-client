@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/rocket-github-web-client/static/css/main.aceb7ba8.chunk.css",
-    "main.js": "/rocket-github-web-client/static/js/main.aae320a6.chunk.js",
-    "runtime-main.js": "/rocket-github-web-client/static/js/runtime-main.c0236c23.js",
-    "static/css/2.cf4232a4.chunk.css": "/rocket-github-web-client/static/css/2.cf4232a4.chunk.css",
-    "static/js/2.72906a77.chunk.js": "/rocket-github-web-client/static/js/2.72906a77.chunk.js",
-    "index.html": "/rocket-github-web-client/index.html",
-    "precache-manifest.87f2304ba498d95d2a039fc8f43fdb14.js": "/rocket-github-web-client/precache-manifest.87f2304ba498d95d2a039fc8f43fdb14.js",
-    "service-worker.js": "/rocket-github-web-client/service-worker.js",
-    "static/js/2.72906a77.chunk.js.LICENSE.txt": "/rocket-github-web-client/static/js/2.72906a77.chunk.js.LICENSE.txt"
+    "main.css": "/github-web-client/static/css/main.aceb7ba8.chunk.css",
+    "main.js": "/github-web-client/static/js/main.76c033ae.chunk.js",
+    "runtime-main.js": "/github-web-client/static/js/runtime-main.33af6066.js",
+    "static/css/2.cf4232a4.chunk.css": "/github-web-client/static/css/2.cf4232a4.chunk.css",
+    "static/js/2.897386a4.chunk.js": "/github-web-client/static/js/2.897386a4.chunk.js",
+    "index.html": "/github-web-client/index.html",
+    "precache-manifest.497b58e8fb48eba32d3cbdce88b224a7.js": "/github-web-client/precache-manifest.497b58e8fb48eba32d3cbdce88b224a7.js",
+    "service-worker.js": "/github-web-client/service-worker.js",
+    "static/js/2.897386a4.chunk.js.LICENSE.txt": "/github-web-client/static/js/2.897386a4.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.c0236c23.js",
+    "static/js/runtime-main.33af6066.js",
     "static/css/2.cf4232a4.chunk.css",
-    "static/js/2.72906a77.chunk.js",
+    "static/js/2.897386a4.chunk.js",
     "static/css/main.aceb7ba8.chunk.css",
-    "static/js/main.aae320a6.chunk.js"
+    "static/js/main.76c033ae.chunk.js"
   ]
 }
