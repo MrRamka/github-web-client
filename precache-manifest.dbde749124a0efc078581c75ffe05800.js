@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "93fd26b899afffe67b28e76dfed79d38",
+    "revision": "27b92009b507769d9940836c47c4fc54",
     "url": "/github-web-client/index.html"
   },
   {
-    "revision": "5aea01ef086fdf2c521d",
+    "revision": "bc48e361251ee217cf91",
     "url": "/github-web-client/static/css/2.cf4232a4.chunk.css"
   },
   {
-    "revision": "eb3c2553ae7a94252a5d",
+    "revision": "856f15297938d92eb71c",
     "url": "/github-web-client/static/css/main.aceb7ba8.chunk.css"
   },
   {
-    "revision": "5aea01ef086fdf2c521d",
-    "url": "/github-web-client/static/js/2.d3b1d3cf.chunk.js"
+    "revision": "bc48e361251ee217cf91",
+    "url": "/github-web-client/static/js/2.00339839.chunk.js"
   },
   {
     "revision": "b5901214077ea32a7534a1d4eff7c84a",
-    "url": "/github-web-client/static/js/2.d3b1d3cf.chunk.js.LICENSE.txt"
+    "url": "/github-web-client/static/js/2.00339839.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "eb3c2553ae7a94252a5d",
-    "url": "/github-web-client/static/js/main.a419610e.chunk.js"
+    "revision": "856f15297938d92eb71c",
+    "url": "/github-web-client/static/js/main.8714ee93.chunk.js"
   },
   {
     "revision": "d473570af28a2da5accc",
