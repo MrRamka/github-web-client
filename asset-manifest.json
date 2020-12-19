@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/github-web-client/static/css/main.aceb7ba8.chunk.css",
-    "main.js": "/github-web-client/static/js/main.76c033ae.chunk.js",
+    "main.js": "/github-web-client/static/js/main.a419610e.chunk.js",
     "runtime-main.js": "/github-web-client/static/js/runtime-main.33af6066.js",
     "static/css/2.cf4232a4.chunk.css": "/github-web-client/static/css/2.cf4232a4.chunk.css",
-    "static/js/2.897386a4.chunk.js": "/github-web-client/static/js/2.897386a4.chunk.js",
+    "static/js/2.d3b1d3cf.chunk.js": "/github-web-client/static/js/2.d3b1d3cf.chunk.js",
     "index.html": "/github-web-client/index.html",
-    "precache-manifest.497b58e8fb48eba32d3cbdce88b224a7.js": "/github-web-client/precache-manifest.497b58e8fb48eba32d3cbdce88b224a7.js",
+    "precache-manifest.84c1e419b596b1a8271c4c2a9cce5ad9.js": "/github-web-client/precache-manifest.84c1e419b596b1a8271c4c2a9cce5ad9.js",
     "service-worker.js": "/github-web-client/service-worker.js",
-    "static/js/2.897386a4.chunk.js.LICENSE.txt": "/github-web-client/static/js/2.897386a4.chunk.js.LICENSE.txt"
+    "static/js/2.d3b1d3cf.chunk.js.LICENSE.txt": "/github-web-client/static/js/2.d3b1d3cf.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.33af6066.js",
     "static/css/2.cf4232a4.chunk.css",
-    "static/js/2.897386a4.chunk.js",
+    "static/js/2.d3b1d3cf.chunk.js",
     "static/css/main.aceb7ba8.chunk.css",
-    "static/js/main.76c033ae.chunk.js"
+    "static/js/main.a419610e.chunk.js"
   ]
 }
