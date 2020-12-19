@@ -69,7 +69,7 @@ export const Repository: FC = () => {
                 setOpen(false);
                 return;
             }
-            setRepositoryFiles(data?.repository?.object.entries ?? [])
+            setRepositoryFiles(data?.repository?.object?.entries ?? [])
         }
     }, [loading, data, error])
 
