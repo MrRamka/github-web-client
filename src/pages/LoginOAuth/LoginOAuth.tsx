@@ -16,9 +16,9 @@ export const LoginOAuth: FC = () => {
      * @module LoginOAuth
      */
     useEffect(() => {
-        const code = window.location.href.match(/\?code=(.*)/);
+        const code = window.location.href.match(/\?code=(.*)/)?.[1].split('#')[0];
         if (code) {
-            const newCode = code.pop();
+            const newCode = code;
             fetch(`${AUTH_API_URI}${newCode}/`)
                 .then(response => response.json())
                 .then(({token}) => {
