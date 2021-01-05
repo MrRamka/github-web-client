@@ -1,20 +1,14 @@
-import React, { FC, useCallback, useMemo } from 'react';
+import React, { FC, useCallback, useMemo, useState } from 'react';
 import { Layout, Menu } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import 'antd/dist/antd.css';
-import {
-    //BranchesOutlined,
-    DatabaseOutlined,
-    LogoutOutlined,
-    //QuestionCircleOutlined,
-    SearchOutlined
-} from '@ant-design/icons/lib';
+import { DatabaseOutlined, LogoutOutlined, SearchOutlined } from '@ant-design/icons/lib';
 import { MENU_NAVIGATION_WIDTH, MenuType } from './types';
 import { Routes as R } from '../../constants';
 import { useHistory } from 'react-router';
 import { AvatarBlock, MenuItem, TitleBlock } from './styles';
 import { UserInfo } from '../UserInfo';
-import { PoppinsSpan } from '../../shared/PoppinsText';
+import { PoppinsSpan } from '../../shared';
 import { AppTitle } from '../AppTitle';
 import { Colors } from '../../shared';
 
@@ -40,6 +34,8 @@ export const NavigationMenu: FC = () => {
     const history = useHistory();
 
     const urlName = window.location.hash;
+    const menuCollapsed = localStorage.getItem('collapsed') === 'true';
+    const [collapsed, setCollapsed] = useState<boolean>(menuCollapsed);
 
     const handleClick = useCallback((type: MenuType) => {
         let pathName: string = '#' + R.ROOT;
@@ -132,15 +128,19 @@ export const NavigationMenu: FC = () => {
         history.push(R.PROFILE)
     }, [history]);
 
+    const onCollapse = useCallback((collapsed: boolean) => {
+        setCollapsed(collapsed);
+        localStorage.setItem('collapsed', "" + collapsed);
+    }, [])
     return (
-        <Sider width={MENU_NAVIGATION_WIDTH} theme="light">
-            <TitleBlock>
-                <AppTitle/>
-            </TitleBlock>
+        <Sider collapsed={collapsed} collapsible onCollapse={onCollapse} width={MENU_NAVIGATION_WIDTH} theme="light">
+            {!collapsed && <TitleBlock>
+				<AppTitle/>
+			</TitleBlock>}
 
-            <AvatarBlock onClick={handleProfileClick}>
-                <UserInfo/>
-            </AvatarBlock>
+            {!collapsed && <AvatarBlock onClick={handleProfileClick}>
+				<UserInfo/>
+			</AvatarBlock>}
             <Menu
                 mode="inline"
                 defaultSelectedKeys={[selectedItem]}
