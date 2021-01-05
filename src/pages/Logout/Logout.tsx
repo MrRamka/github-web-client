@@ -16,7 +16,7 @@ export const Logout: FC = () => {
         localStorage.removeItem('github_token');
         setTimeout(() => {
             history.push(R.LOGIN);
-        }, 2000)
+        }, 2000);
     }, [history]);
 
     return (

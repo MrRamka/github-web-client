@@ -39,10 +39,10 @@ export const NavigationMenu: FC = () => {
 
     const history = useHistory();
 
-    const urlName = window.location.pathname.split('/')[1];
+    const urlName = window.location.hash;
 
     const handleClick = useCallback((type: MenuType) => {
-        let pathName: string = R.ROOT;
+        let pathName: string = '#' + R.ROOT;
         if (type === MenuType.PROFILE) {
             pathName = R.PROFILE;
         }
@@ -107,7 +107,7 @@ export const NavigationMenu: FC = () => {
 
     const selectedItem = useMemo(
         () => {
-            const newUrl = '/' + urlName;
+            const newUrl = urlName.split('#')[1];
             if (newUrl === R.ROOT || urlName === R.PROFILE) {
                 return MenuType.PROFILE;
             }
