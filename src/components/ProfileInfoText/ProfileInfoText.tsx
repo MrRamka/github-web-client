@@ -31,7 +31,7 @@ export const ProfileInfoText: FC<Props> = ({name, login, followers, following, u
             <Name>{name}</Name>
             <LoginText>{login}</LoginText>
             <Row>
-                <Col span={12}>
+                <Col span={12} sm={24} xs={24} md={12} lg={12} xxl={12} xl={12}>
                     <FollowersWrapper>
                         <UserOutlined/>
                         <InfoPositionText>{followers} Followers </InfoPositionText>

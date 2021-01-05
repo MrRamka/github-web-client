@@ -18,7 +18,7 @@
     "@types/react-router": "^5.1.8",
     "@types/react-router-dom": "^5.1.6",
     "@types/styled-components": "^5.1.4",
-    "antd": "^4.6.6",
+    "antd": "^4.7.3",
     "apollo-boost": "^0.4.9",
     "apollo-client-preset": "^1.0.8",
     "axios": "^0.21.0",
