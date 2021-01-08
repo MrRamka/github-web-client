@@ -11,27 +11,27 @@ export const renderRepositoryCard = (item: RepositoryNode) => (
         key={item.id + new Date()}
         name={item.name}
         nameWithOwner={item.nameWithOwner}
-        owner={item.owner.login}
-        description={item.description}
-        pushedAt={item.pushedAt}
-        languages={item.languages.nodes}
-        stargazerCount={item.stargazerCount}
-        hasStarred={item.viewerHasStarred}
+        owner={item?.owner?.login}
+        description={item?.description}
+        pushedAt={item?.pushedAt}
+        languages={item?.languages?.nodes}
+        stargazerCount={item?.stargazerCount}
+        hasStarred={item?.viewerHasStarred}
         id={item.id}
     />
 );
 
 export const renderPinnedRepositoryCard = (item: RepositoryNode) => (
     <PinnedRepositoryCard
-        key={item.id + new Date()}
-        name={item.name}
-        nameWithOwner={item.nameWithOwner}
-        owner={item.owner.login}
-        description={item.description}
-        pushedAt={item.pushedAt}
-        languages={item.languages.nodes}
-        stargazerCount={item.stargazerCount}
-        hasStarred={item.viewerHasStarred}
+        key={item?.id + new Date()}
+        name={item?.name}
+        nameWithOwner={item?.nameWithOwner}
+        owner={item?.owner?.login}
+        description={item?.description}
+        pushedAt={item?.pushedAt}
+        languages={item?.languages?.nodes}
+        stargazerCount={item?.stargazerCount}
+        hasStarred={item?.viewerHasStarred}
         id={item.id}
     />
 );

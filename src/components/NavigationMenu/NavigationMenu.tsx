@@ -1,22 +1,17 @@
-import React, { FC, useCallback, useMemo } from 'react';
+import React, { FC, useCallback, useMemo, useState } from 'react';
 import { Layout, Menu } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import 'antd/dist/antd.css';
-import {
-    //BranchesOutlined,
-    DatabaseOutlined,
-    LogoutOutlined,
-    //QuestionCircleOutlined,
-    SearchOutlined
-} from '@ant-design/icons/lib';
+import { DatabaseOutlined, LogoutOutlined, SearchOutlined } from '@ant-design/icons/lib';
 import { MENU_NAVIGATION_WIDTH, MenuType } from './types';
 import { Routes as R } from '../../constants';
 import { useHistory } from 'react-router';
 import { AvatarBlock, MenuItem, TitleBlock } from './styles';
 import { UserInfo } from '../UserInfo';
-import { PoppinsSpan } from '../../shared/PoppinsText';
+import { PoppinsSpan } from '../../shared';
 import { AppTitle } from '../AppTitle';
 import { Colors } from '../../shared';
+import { useMediaQuery } from 'react-responsive';
 
 const {Sider} = Layout;
 
@@ -36,13 +31,14 @@ type navType = {
  * Creates menu by uri
  */
 export const NavigationMenu: FC = () => {
-
+    const isMobile = useMediaQuery(
+        { maxWidth: 760 }
+    );
     const history = useHistory();
 
-    const urlName = window.location.pathname.split('/')[1];
-
+    const urlName = window.location.hash;
     const handleClick = useCallback((type: MenuType) => {
-        let pathName: string = R.ROOT;
+        let pathName: string = '#' + R.ROOT;
         if (type === MenuType.PROFILE) {
             pathName = R.PROFILE;
         }
@@ -107,7 +103,7 @@ export const NavigationMenu: FC = () => {
 
     const selectedItem = useMemo(
         () => {
-            const newUrl = '/' + urlName;
+            const newUrl = urlName.split('#')[1];
             if (newUrl === R.ROOT || urlName === R.PROFILE) {
                 return MenuType.PROFILE;
             }
@@ -133,14 +129,15 @@ export const NavigationMenu: FC = () => {
     }, [history]);
 
     return (
-        <Sider width={MENU_NAVIGATION_WIDTH} theme="light">
-            <TitleBlock>
+        <Sider collapsed={isMobile} width={MENU_NAVIGATION_WIDTH}
+               theme="light">
+            {!isMobile && <TitleBlock>
                 <AppTitle/>
-            </TitleBlock>
+            </TitleBlock>}
 
-            <AvatarBlock onClick={handleProfileClick}>
+            {!isMobile && <AvatarBlock onClick={handleProfileClick}>
                 <UserInfo/>
-            </AvatarBlock>
+            </AvatarBlock>}
             <Menu
                 mode="inline"
                 defaultSelectedKeys={[selectedItem]}

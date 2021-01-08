@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Colors } from '../../shared';
 import { GithubOutlined } from '@ant-design/icons/lib';
 import { PoppinsText } from '../../shared';
+import px2vw from '../../helpers/px2vw';
 
 export const Wrapper = styled.div`
 	height: 90vh;
@@ -9,6 +10,10 @@ export const Wrapper = styled.div`
 	width: 100%;
 	align-items: center;
 	justify-content: space-around;
+
+    @media (max-width: 768px) {
+      height: 90vh;
+    }
 `;
 
 export const GithubLoginLogo = styled(GithubOutlined)`
@@ -21,28 +26,45 @@ export const LogoWrapper = styled.div`
 	height: 25rem;
 	display: flex;
 	justify-content: flex-end;
+
+    @media(max-width: 1024px){
+      display: none;
+    }
+  
 `;
 
 export const TextWrapper = styled.div`
 	width: 50%;
 	height: 25rem;
+  
+    @media(max-width: 1024px){
+      width: 90%;
+    }
 `;
+
 export const BlueLinkOutline = styled.a`
-	border: 2px solid;
-	color: ${Colors.blue_6};
-	background-color: ${Colors.gray_3};
-	border-color: ${Colors.blue_6};
-	border-radius: 10px;
-	font-size: 1.7rem;
-	font-family: 'Poppins', serif;
-	padding: 0.7rem 3rem;
+    color: ${Colors.blue_6};
+    background-color: ${Colors.gray_3};
+    border: 2px solid ${Colors.blue_6};
+    border-radius: 10px;
+    font-size: ${px2vw(32)};
+    font-family: 'Poppins', serif;
+    padding: ${px2vw(10)} ${px2vw(32)};
+  
+    @media (max-width: 1024px) {
+      font-size: 18px;
+    }
 `;
 
 export const WelcomeText = styled(PoppinsText)`
 	font-family: 'Poppins', serif;
 	color: ${Colors.blue_12};
-	font-size: 1.5rem;
+	font-size: ${px2vw(24)};
 	font-weight: bold;
+  
+    @media (max-width: 1024px) {
+      font-size: 18px;
+    }
 `;
 
 export const ButtonWrapper = styled.div`
@@ -56,6 +78,11 @@ export const InnerDiv = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+
+    @media(max-width: 1024px){
+      width: 90%;
+      height: ${px2vw(500)};
+    }
 `;
 
 export const ViewCodeBlock = styled.div`
@@ -69,7 +96,6 @@ export const GithubViewLogo = styled(GithubOutlined)`
 `;
 
 export const ViewCode = styled.div`
-	width: 15%;
 	display: flex;
 	align-items: center;
 `;

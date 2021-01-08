@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { Routes as R } from './constants';
-import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 import { Login } from './pages/Login';
 import { LoginOAuth } from './pages/LoginOAuth';
 import { ProfilePage } from './pages/Profile';

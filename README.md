@@ -24,7 +24,6 @@ REACT_APP_AUTH_API_URI=`YOUR_HEROKU_URL` <br />
 REACT_APP_REDIRECT_URI=`http://localhost:3000/login/oauth/access_token/` <br />
 REACT_APP_CLIENT_ID=`YOUR_GITHUB_CLIENT_ID` <br />
 
-
 4. Install all packages using `yarn` command  
 
 ### 3. Run project
