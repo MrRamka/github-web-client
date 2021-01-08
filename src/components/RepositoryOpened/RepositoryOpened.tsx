@@ -34,11 +34,11 @@ export const RepositoryOpened: FC<RepositoryOpenedProps> = ({username, repositor
             <Title style={{fontWeight: 'lighter'}}>
                 <UsernameWrapper onClick={handleClick}>{username}</UsernameWrapper>/{repository}
             </Title>
-            <Row justify="space-between">
-                <Col span={18}>
+            <Row justify="space-between" gutter={[0, 20]}>
+                <Col xs={24} sm={24} md={24} lg={24} xl={18}>
                     <RepositoryFiles files={files} loading={loading}/>
                 </Col>
-                <Col span={5}>
+                <Col xs={24} sm={24} md={24} lg={24} xl={5}>
                     <RepositoryDescription info={info} loading={loading}/>
                 </Col>
             </Row>
