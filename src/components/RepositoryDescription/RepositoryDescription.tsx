@@ -16,7 +16,7 @@ type RepositoryDescriptionProps = {
 export const RepositoryDescription: FC<RepositoryDescriptionProps> = ({info, loading}) => {
     const formatted_date = formatDate(info.repository.createdAt);
     return (
-        <Card title="About" bordered={false} style={{width: 300}} loading={loading}>
+        <Card title="About" bordered={false} loading={loading}>
             <p><i>{info.repository.description}</i></p>
             <p>Created at: <b>{formatted_date}</b></p>
             <p>Disk usage: <b>{info.repository.diskUsage} KB</b></p>
