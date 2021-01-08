@@ -151,7 +151,7 @@ export default class GitHubCalendar extends React.Component<Props, State> {
         return (
             <Measure bounds onResize={ (rect) => this.updateSize(rect.bounds) }>
                 { ({ measureRef }: any) => (
-                    <div ref={ measureRef } style={ { width: "100%" } }>
+                    <div ref={ measureRef }>
                         <svg
                             style={ {
                                 fontFamily: 'Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif',

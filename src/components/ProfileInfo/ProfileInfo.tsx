@@ -16,7 +16,7 @@ export const ProfileInfo: FC<Props> = ({data}) => {
     return (
         <InfoBlock>
             <ImageInfoBlock>
-                <Avatar src={data.avatarUrl} shape="circle" size={256}/>
+                <Avatar src={data.avatarUrl} shape="circle" size={{ xs: 50, sm: 75, md: 100, lg: 125, xl: 150, xxl: 250 }}/>
             </ImageInfoBlock>
             <TextInfoBlock>
                 <ProfileInfoText

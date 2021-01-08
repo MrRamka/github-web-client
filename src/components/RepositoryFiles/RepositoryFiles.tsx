@@ -50,6 +50,6 @@ export const RepositoryFiles: FC<RepositoryFilesProps> = ({files, loading}) => {
     ] as ColumnsType<RepositoryFile>, []);
     return (
         <Table<RepositoryFile> rowKey={rowKey} columns={columns} pagination={false} dataSource={files}
-                               loading={loading}/>
+                               loading={loading} style={{overflow: "scroll"}}/>
     );
 }

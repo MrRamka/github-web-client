@@ -1,10 +1,10 @@
 import React, { FC, useCallback, useMemo } from 'react';
-import { Input, Select } from 'antd';
+import { Select } from 'antd';
 import { useHistory } from 'react-router';
 import { Routes as R } from '../../constants';
 import { SearchTypes } from './types';
+import { Search } from './styles';
 
-const {Search} = Input;
 const {Option} = Select;
 
 interface GlobalSearchProps {
@@ -29,7 +29,7 @@ export const GlobalSearch: FC<GlobalSearchProps> = ({setSearchValue, setSearchTy
      * @see SearchTypes
      */
     const selectSearchItem = useMemo(() => (
-        <Select defaultValue={SearchTypes.REPOSITORY} className="select-before" style={{width: 150}}
+        <Select defaultValue={SearchTypes.REPOSITORY} className="select-before" size='small'
                 onChange={onChangeSearchType}>
             <Option value={SearchTypes.REPOSITORY}>{SearchTypes.REPOSITORY}</Option>
             <Option value={SearchTypes.USER}>{SearchTypes.USER}</Option>
@@ -46,7 +46,7 @@ export const GlobalSearch: FC<GlobalSearchProps> = ({setSearchValue, setSearchTy
     }, []);
 
     return (
-        <Search autoFocus style={{width: '50%'}} addonBefore={selectSearchItem} placeholder="Global search" size="large" onSearch={onSearch}
+        <Search autoFocus addonBefore={selectSearchItem} placeholder="Global search" size="middle" onSearch={onSearch}
                 onClick={onClick} allowClear/>
     );
 }
