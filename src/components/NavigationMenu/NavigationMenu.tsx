@@ -31,13 +31,12 @@ type navType = {
  * Creates menu by uri
  */
 export const NavigationMenu: FC = () => {
-    const isMobile = useMediaQuery({query: `(max-width: 760px)`});
+    const isMobile = useMediaQuery(
+        { maxWidth: 760 }
+    );
     const history = useHistory();
 
     const urlName = window.location.hash;
-    const menuCollapsed = isMobile || localStorage.getItem('collapsed') === 'true';
-    const [collapsed, setCollapsed] = useState<boolean>(menuCollapsed);
-
     const handleClick = useCallback((type: MenuType) => {
         let pathName: string = '#' + R.ROOT;
         if (type === MenuType.PROFILE) {
@@ -129,19 +128,16 @@ export const NavigationMenu: FC = () => {
         history.push(R.PROFILE)
     }, [history]);
 
-    const onCollapse = useCallback((collapsed: boolean) => {
-        setCollapsed(collapsed);
-        localStorage.setItem('collapsed', "" + collapsed);
-    }, [])
     return (
-        <Sider collapsed={collapsed} collapsible={!isMobile} onCollapse={onCollapse} width={MENU_NAVIGATION_WIDTH} theme="light">
-            {!collapsed && <TitleBlock>
-				<AppTitle/>
-			</TitleBlock>}
+        <Sider collapsed={isMobile} width={MENU_NAVIGATION_WIDTH}
+               theme="light">
+            {!isMobile && <TitleBlock>
+                <AppTitle/>
+            </TitleBlock>}
 
-            {!collapsed && <AvatarBlock onClick={handleProfileClick}>
-				<UserInfo/>
-			</AvatarBlock>}
+            {!isMobile && <AvatarBlock onClick={handleProfileClick}>
+                <UserInfo/>
+            </AvatarBlock>}
             <Menu
                 mode="inline"
                 defaultSelectedKeys={[selectedItem]}
