@@ -11,6 +11,7 @@ import { UserInfo } from '../UserInfo';
 import { PoppinsSpan } from '../../shared';
 import { AppTitle } from '../AppTitle';
 import { Colors } from '../../shared';
+import { useMediaQuery } from 'react-responsive';
 
 const {Sider} = Layout;
 
@@ -30,11 +31,11 @@ type navType = {
  * Creates menu by uri
  */
 export const NavigationMenu: FC = () => {
-
+    const isMobile = useMediaQuery({query: `(max-width: 760px)`});
     const history = useHistory();
 
     const urlName = window.location.hash;
-    const menuCollapsed = localStorage.getItem('collapsed') === 'true';
+    const menuCollapsed = isMobile || localStorage.getItem('collapsed') === 'true';
     const [collapsed, setCollapsed] = useState<boolean>(menuCollapsed);
 
     const handleClick = useCallback((type: MenuType) => {
@@ -133,7 +134,7 @@ export const NavigationMenu: FC = () => {
         localStorage.setItem('collapsed', "" + collapsed);
     }, [])
     return (
-        <Sider collapsed={collapsed} collapsible onCollapse={onCollapse} width={MENU_NAVIGATION_WIDTH} theme="light">
+        <Sider collapsed={collapsed} collapsible={!isMobile} onCollapse={onCollapse} width={MENU_NAVIGATION_WIDTH} theme="light">
             {!collapsed && <TitleBlock>
 				<AppTitle/>
 			</TitleBlock>}
